@@ -1,23 +1,21 @@
 .btn-dark:hover {
-    background-color:  rgb(29, 29, 29);
-    border-color: black;
-  }
+  background-color: rgb(29, 29, 29);
+  border-color: black;
+}
 
-  .btn-dark {
-    background-color:  black;
-    border-color: black;
-  }
+.btn-dark {
+  background-color: black;
+  border-color: black;
+}
 .btn-primary {
   background-color: #1d9bef;
   border-color: #1d9bef;
   width: 200px;
-
 }
- 
+
 .btn-primary:hover {
   background-color: #1b90dd;
   border-color: #1b90dd;
- 
 }
 .leftsidebar {
   height: 1100px;
@@ -25,21 +23,20 @@
 
 img {
   height: 42px;
- }
+}
 
- .usuario {
+.usuario {
   color: rgba(211, 211, 211, 0.509);
   font-size: 1rem;
- }
- .nombreusuario {
+}
+.nombreusuario {
   font-size: 1rem;
- }
- .botonuser {
+}
+.botonuser {
   width: 300px;
   margin-top: 340px;
   padding-top: 8px;
   padding-bottom: 0px;
   padding-left: 10px;
   padding-right: 10px;
- }
-
+}
