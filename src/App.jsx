@@ -1,10 +1,10 @@
-import { Sedibar } from "./components/Sedibar.jsx";
+import { SedibarLeft } from "./components/SedibarLeft.jsx";
 import "./App.css";
 
 function App() {
   return (
     <div className="App">
-      <Sedibar />
+      <SedibarLeft />
     </div>
   );
 }
