@@ -1,9 +1,10 @@
+body {
+  background-color: black !important;
+}
 .App {
   text-align: center;
 }
-.container {
-  border: 1px solid red;
-}
+
 .App-logo {
   height: 40vmin;
   pointer-events: none;
