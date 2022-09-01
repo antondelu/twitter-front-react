@@ -1,0 +1,42 @@
+.fotoPerfil {
+  width: 10%;
+  margin-left: 20px;
+}
+
+.imgFotoPerfil {
+  border-radius: 50%;
+}
+
+.crearTweet {
+  width: 85%;
+}
+
+.crearTweetInput {
+  width: 95%;
+  height: 80px;
+  background-color: black;
+  border: none;
+  font-size: large;
+  resize: none;
+  outline: none;
+  color: white;
+}
+
+.buttonTweetHome {
+  height: 40px;
+  width: 100px;
+  font-weight: 700;
+}
+
+.tweetHome {
+  text-decoration: none;
+  min-height: 80px;
+}
+
+ul {
+  list-style: none;
+}
+
+.iconosTweet {
+  width: 500px;
+}
