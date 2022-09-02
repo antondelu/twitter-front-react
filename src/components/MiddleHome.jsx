@@ -11,7 +11,7 @@ function MiddleHome() {
   const tweets = ["hola", "jola", "hola", "hola", "jola", "hola"];
   return (
     <>
-      <div className="col-10 col-lg-6 col-xxl-6 bg-black">
+      <div className="col-10 col-lg-5 col-xxl-5 bg-black">
         <div className="d-flex justify-content-between mt-3 mb-1">
           <h4 className=" mx-1 text-white">Home</h4>
           <img src="/stars_logo.png" height="30px" alt="" />
