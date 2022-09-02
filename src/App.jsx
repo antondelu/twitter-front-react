@@ -1,5 +1,5 @@
 import "./App.css";
-import { SedibarLeft } from "./components/SedibarLeft.jsx";
+import { SedibarLeft } from "./components/RightSedebar.jsx";
 import "bootstrap/dist/css/bootstrap.min.css";
 import { LeftSidebar } from "./components/LeftSidebar.jsx";
 import MiddleHome from "./components/MiddleHome";
