@@ -13,10 +13,10 @@ import "../LeftSidebar.css";
 
 export const LeftSidebar = () => {
   return (
-    <div className="col-md-3">
+    <div className="col-lg-3">
       <div className="row text-start justify-content-end leftsidebar">
         <div className="col-md-7">
-          <button className="btn btn-dark text-light rounded-pill mb-1 btn-lg me-5 mt-1">
+          <button className="btn btn-dark text-light text-start rounded-pill mb-1 btn-lg col-md-7 mt-1">
             <TwitterIcon className="fs-2" />
           </button>
           <button className="btn btn-dark text-light rounded-pill mb-1 btn-lg fw-bold mt-1">
