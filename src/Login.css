@@ -1,0 +1,153 @@
+.backgroundimg {
+ background-image: url("https://abs.twimg.com/sticky/illustrations/lohp_1302x955.png");
+ height: 940px;
+}
+
+.twitterimg {
+    height: 300px;
+    margin-top: 295px;
+}
+
+h1 {
+    font-size: 4rem;
+    font-family: Verdana;
+    font-weight: bold;
+    margin-top: 65px;
+}
+
+h4 {
+    font-size: 2rem;
+    font-family: Verdana;
+    font-weight: bold;
+    margin-top: 70px;
+}
+
+.rightside {
+    margin-top: 60px;
+    padding-left: 35px;
+}
+.btngoogle {
+    margin-top: 10px;
+    background-color: white;
+    border-color: black;
+    height: 45px;
+    width: 300px;
+}
+
+.usuario {
+    color: rgb(130, 130, 130);
+    font-size: 0.8rem;
+    font-family: Arial, Helvetica, sans-serif;
+    margin-left: -35px;
+    margin-top: -5px;
+   }
+   .nombreusuario {
+    font-size: 0.7rem;
+    margin-left: -35px;
+    margin-top: 4px;
+    color: rgb(72, 72, 72);
+  
+   }
+   img {
+    height: 28px;
+    margin-left: -9px;
+    margin-right: 30px;
+   }
+
+   .googleicon {
+    margin-left: 8px;
+   }
+
+   .btnapple {
+    margin-left: 0px;
+    margin-top: 10px;
+    background-color: white;
+    border-color: black;
+    height: 45px;
+    width: 300px;
+   }
+
+   .apple-icon {
+    margin-top: 6px;
+    margin-left: 25px;
+   }
+
+   .nombreusuario-apple {
+    margin-left: -14px;
+   }
+
+   hr {
+    width: 130px;
+   }
+
+   .linea-hr {
+    margin-left: -6px;
+   }
+
+   .btntelefono {
+    margin-left: 0px;
+    margin-top: 10px;
+    background-color: #1b90dd;
+    border-color: #1b90dd;
+    height: 45px;
+    width: 300px;
+   }
+
+   .btntelefono:hover {
+    margin-left: 0px;
+    margin-top: 10px;
+    background-color: #1882c8;
+    border-color: #1882c8;
+    height: 45px;
+    width: 300px;
+   }
+
+   .nombreusuario-tel {
+    font-size: 0.9rem;
+   }
+
+   .terminos-de-servicio {
+    font-size: 0.7rem;
+    color: rgb(111, 111, 111);
+    margin-top: 5px;
+    padding-right: 390px;
+   }
+
+   .text-twitter {
+    color: #1882c8;
+   }
+
+   .ya-tienes-cuenta {
+    margin-top: 44px;
+    font-weight: bold;
+    font-family: Verdana;
+   }
+
+   .btn-iniciar-sesion {
+    margin-left: 0px;
+    margin-top: 10px;
+    background-color: black;
+    border-color: gray;
+    height: 45px;
+    width: 300px;
+   }
+
+   .btn-iniciar-sesion:hover {
+    margin-left: 0px;
+    margin-top: 10px;
+    background-color: #1d9bef27;
+    border-color: gray;
+    height: 45px;
+    width: 300px;
+   }
+
+   .iniciar-texto {
+    color: #1d9bef;
+   }
+
+   .footer {
+    height: 70px;
+    background-color: black;
+    color: gray;
+    font-size: 1rem;
+   }

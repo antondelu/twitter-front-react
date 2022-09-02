@@ -111,7 +111,6 @@ span {
   font-family: inherit;
   font-weight: bold;
   cursor: pointer;
-  margin-left: 25px;
 }
 
 /* From uiverse.io by @alexruix */
@@ -180,22 +179,25 @@ span {
 }
 .usuario {
   font-weight: lighter;
+  font-size: 4rem;
 }
 
 .avatar {
-  margin-top: 5px;
+  height: 45px;
+  margin-top: -3px;
+  margin-left: 10px;
 }
 
 .title {
   font-size: 1.3rem;
 }
 
-.showmore {
+#showmore {
   font-size: 1rem;
   font-weight: lighter;
   color: #1d9bef;
-  margin-top: 0px;
-  margin-left: -200px;
+  margin-top: 20px;
+  margin-left: -170px;
 }
 
 .termsofservice {
@@ -204,4 +206,9 @@ span {
   padding-left: 10px;
   padding-right: 10px;
   padding-bottom: 30px;
+}
+
+#nombreusuario {
+  color: white;
+  font-size: 0.9rem;
 }
