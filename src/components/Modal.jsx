@@ -11,22 +11,24 @@ import sendingData from "../services/service";
 import { useNavigate } from "react-router-dom";
 import "bootstrap/dist/css/bootstrap.min.css";
 import { useDispatch } from "react-redux";
+import axios from "axios";
 
 export const Modal = () => {
   const [visible, setVisible] = useState(false);
-  const [username, setUsername] = useState("");
-  const [password, setPassword] = useState("");
+  const [username, setUsername] = useState("hola");
+  const [password, setPassword] = useState("1234");
 
   const dispatch = useDispatch();
   const navigate = useNavigate();
   async function handleSubmit() {
     const { data } = await sendingData(username, password);
-    console.log(data.token);
+    const user = await axios.get("http://localhost:8000/user/" + username);
+    console.log(user.data);
     dispatch({
       type: "TOKEN",
       payload: {
         token: data.token,
-        username: username,
+        ...user.data,
       },
     });
     navigate("/home");

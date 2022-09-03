@@ -3,14 +3,15 @@ import "../Home.css";
 import { useState } from "react";
 import ModeCommentIcon from "@mui/icons-material/ModeComment";
 import FileUploadIcon from "@mui/icons-material/FileUpload";
-import FavoriteIcon from "@mui/icons-material/Favorite";
 import LoopIcon from "@mui/icons-material/Loop";
 import { useSelector } from "react-redux";
 import axios from "axios";
+import Like from "./Like";
 
 function MiddleHome() {
   const [tweet, setTweet] = useState("");
   const [tweets, setTweets] = useState([]);
+  const [likeChanged, setLikeChanged] = useState(false);
   const store = useSelector((state) => state);
   const myUser = store.login;
 
@@ -22,10 +23,9 @@ function MiddleHome() {
       setTweets(response.data);
     };
     getTweets();
-  }, []);
+  }, [likeChanged]);
 
   async function addTweets(tweet) {
-    console.log(myUser.token);
     const response = await axios({
       method: "post",
       url: "http://localhost:8000/tweet",
@@ -35,7 +35,6 @@ function MiddleHome() {
         "Content-Type": "application/json",
       },
     });
-    console.log(response.data);
     setTweet("");
     return response;
   }
@@ -87,7 +86,7 @@ function MiddleHome() {
           <hr className=" text-light" />
           <div className="row">
             <ul>
-              {tweets.map((element, index) => (
+              {tweets?.map((element, index) => (
                 <>
                   <li className="tweetHome d-flex" key={element.id}>
                     <div className="fotoPerfil me-2">
@@ -108,17 +107,11 @@ function MiddleHome() {
                         <div>
                           <LoopIcon /> 3
                         </div>
-
-                        <div>
-                          {!element.likes.includes(myUser.id) ? (
-                            <span style={{ color: "#fa167f" }}>
-                              <FavoriteIcon />
-                            </span>
-                          ) : (
-                            <FavoriteIcon />
-                          )}{" "}
-                          {element.likes.length}
-                        </div>
+                        <Like
+                          tweet={element}
+                          likeChanged={likeChanged}
+                          setLikeChanged={setLikeChanged}
+                        />
                         <div>
                           <FileUploadIcon />
                         </div>

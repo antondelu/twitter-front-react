@@ -75,60 +75,60 @@ export const Login = () => {
         </div>
       </div>
       <footer className="footer">
-        <div Class="row mt-2 w-100">
-          <div Class="d-flex justify-content-center flex-wrap">
-            <div Class="mx-2">
+        <div className="row mt-2 w-100">
+          <div className="d-flex justify-content-center flex-wrap">
+            <div className="mx-2">
               <p>About</p>
             </div>
-            <div Class="mx-2">
+            <div className="mx-2">
               <p>Help Center</p>
             </div>
-            <div Class="mx-2">
+            <div className="mx-2">
               <p>Terms of Service</p>
             </div>
-            <div Class="mx-2">
+            <div className="mx-2">
               <p>Privacy Policy</p>
             </div>
-            <div Class="mx-2">
+            <div className="mx-2">
               <p>Cookie Policy</p>
             </div>
-            <div Class="mx-2">
+            <div className="mx-2">
               <p>Accessibility</p>
             </div>
-            <div Class="mx-2">
+            <div className="mx-2">
               <p>Ads info</p>
             </div>
-            <div Class="mx-2">
+            <div className="mx-2">
               <p>Blog</p>
             </div>
-            <div Class="mx-2">
+            <div className="mx-2">
               <p>Status</p>
             </div>
-            <div Class="mx-2">
+            <div className="mx-2">
               <p>Careers</p>
             </div>
-            <div Class="mx-2">
+            <div className="mx-2">
               <p>Brand Resources</p>
             </div>
-            <div Class="mx-2">
+            <div className="mx-2">
               <p>Advertising</p>
             </div>
-            <div Class="mx-2">
+            <div className="mx-2">
               <p>Marketing</p>
             </div>
-            <div Class="mx-2">
+            <div className="mx-2">
               <p>Twitter for Business</p>
             </div>
-            <div Class="mx-2">
+            <div className="mx-2">
               <p>Developers</p>
             </div>
-            <div Class="mx-2">
+            <div className="mx-2">
               <p>Directory</p>
             </div>
-            <div Class="mx-2">
+            <div className="mx-2">
               <p>Settings</p>
             </div>
-            <div class="mx-2">
+            <div className="mx-2">
               <p>© 2022 Equipo 5, Hack!</p>
             </div>
           </div>

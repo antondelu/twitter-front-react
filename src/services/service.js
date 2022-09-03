@@ -9,4 +9,5 @@ async function sendingData(username, password) {
   });
   return response;
 }
+
 export default sendingData;
