@@ -7,6 +7,7 @@ import FavoriteIcon from "@mui/icons-material/Favorite";
 import LoopIcon from "@mui/icons-material/Loop";
 import { useSelector } from "react-redux";
 import axios from "axios";
+import { useDispatch } from "react-redux";
 
 function MiddleHome() {
   const [tweet, setTweet] = useState("");
@@ -14,6 +15,7 @@ function MiddleHome() {
   const store = useSelector((state) => state);
   const myUser = store.login;
 
+  const dispatch = useDispatch();
   useEffect(() => {
     const getTweets = async () => {
       const response = await axios.get("http://localhost:8000/home", {
@@ -35,8 +37,12 @@ function MiddleHome() {
         "Content-Type": "application/json",
       },
     });
-    console.log(response.data);
+    console.log(response.data._id);
     setTweet("");
+    dispatch({
+      type: "CREAR_TWEET",
+      payload: response.data._id,
+    });
     return response;
   }
 
