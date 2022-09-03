@@ -1,9 +1,10 @@
 import "./App.css";
+
 import "bootstrap/dist/css/bootstrap.min.css";
-import { Home } from "./containers/containerHome";
+import { Home } from "./containers/ContainerHome";
 import { Route, Routes } from "react-router-dom";
 import { Login } from "./components/Login";
-import { Profile } from "./components/Profile";
+import { Profile } from "./containers/ContainerProfile";
 
 function App() {
   return (
