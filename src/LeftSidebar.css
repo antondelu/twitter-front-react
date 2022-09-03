@@ -18,7 +18,10 @@
   border-color: #1b90dd;
 }
 .leftsidebar {
-  height: 1100px;
+  height: 1000px;
+  background-color: black;
+  position: sticky;
+  top: 0;
 }
 
 img {
@@ -34,9 +37,15 @@ img {
 }
 .botonuser {
   width: 300px;
-  margin-top: 340px;
+  margin-top: 320px;
+  margin-left: -40px;
   padding-top: 8px;
   padding-bottom: 0px;
   padding-left: 10px;
   padding-right: 10px;
+}
+
+.usuario {
+  color: lightgray;
+  font-size: 1rem;
 }

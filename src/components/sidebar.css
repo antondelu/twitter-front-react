@@ -13,13 +13,14 @@ body {
 .trends {
   display: flex;
   flex-direction: column;
-  font-size: 18px;
+  font-size: 0.85rem;
   font-weight: 300;
   margin-left: 3px;
   font-family: inherit;
   margin-top: 10px;
   padding-left: 16px;
   cursor: pointer;
+
 }
 .trends:hover {
   background-color: #979da113;
@@ -46,26 +47,24 @@ body {
 }
 .card-title {
   display: flex;
-  margin: 0 0 10px 0;
-  padding: 0;
-  font-size: 23px;
-  font-weight: 800;
+  font-size: 1rem;
 }
 
 .card-body {
   width: 100%;
-  border-radius: 49px 49px 49px 49px;
-  -moz-border-radius: 49px 49px 49px 49px;
-  -webkit-border-radius: 49px 49px 49px 49px;
+  border-radius: 15px 15px 15px 15px;
+  -moz-border-radius: 15px 15px 15px 15px;
+  -webkit-border-radius: 15px 15px 15px 15px;
   color: white;
   width: 400px;
-  background-color: #212327;
+  background-color: #16181c;
   margin-left: 20px;
 }
 .contentTrends {
   display: flex;
   justify-content: space-between;
   color: #71767b;
+  
 }
 .contentTrends h2 {
   margin-right: 20px;
@@ -103,29 +102,32 @@ span {
 
 .buttonFollow {
   border-radius: 10em;
-  height: 40px !important;
-  width: 100px;
+  height: 35px !important;
+  width: 90px;
   background: white;
-  font-size: 17px;
+  border: #212327;
+  font-size: 15.5px;
   color: black;
   font-family: inherit;
-  font-weight: 500;
+  font-weight: bold;
   cursor: pointer;
+  margin-left: 25px;
 }
 
 /* From uiverse.io by @alexruix */
 .group {
+ 
   display: flex;
   line-height: 28px;
   align-items: center;
   position: relative;
-  max-width: 200px;
   margin-left: 100px;
-  margin-top: 10px;
+  margin-top: 5px;
+  margin-bottom: 20px;
 }
 
 .input {
-  width: 100%;
+  width: 300px;
   height: 40px;
   line-height: 28px;
   padding: 0 1rem;
@@ -167,4 +169,39 @@ span {
 .followUser {
   margin: 0;
   padding: 0;
+}
+
+.whotofollow {
+  height: 310px;
+}
+
+.card2 {
+  margin-top: -35px;
+}
+.usuario {
+  font-weight: lighter;
+}
+
+.avatar {
+  margin-top: 5px;
+}
+
+.title {
+  font-size: 1.3rem;
+}
+
+.showmore {
+  font-size: 1rem;
+  font-weight: lighter;
+  color: #1d9bef;
+  margin-top: 0px;
+  margin-left: -200px;
+}
+
+.termsofservice {
+  color: #868b91;
+  font-size: 0.85rem;
+  padding-left: 10px;
+  padding-right: 10px;
+  padding-bottom: 30px;
 }

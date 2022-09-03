@@ -16,7 +16,7 @@ function MiddleHome() {
           <h4 className=" mx-1 text-white">Home</h4>
           <img src="/stars_logo.png" height="30px" alt="" />
         </div>
-        <div className="text-white mt-3">
+        <div className="text-white mt-3 middlehome">
           <form action="/addTweet" method="post">
             <div className="row d-flex ">
               <div className="fotoPerfil me-2">
