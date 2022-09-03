@@ -7,15 +7,31 @@ import {
   CModalTitle,
 } from "@coreui/react";
 import { useState } from "react";
-// import sendingData from "../services/service";
-// import { useDispatch } from "react-redux";
-// import { useNavigate } from "react-router-dom";
+import sendingData from "../services/service";
+import { useNavigate } from "react-router-dom";
 import "bootstrap/dist/css/bootstrap.min.css";
+import { useDispatch } from "react-redux";
 
 export const Modal = () => {
   const [visible, setVisible] = useState(false);
   const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
+
+  const dispatch = useDispatch();
+  const navigate = useNavigate();
+  async function handleSubmit() {
+    const { data } = await sendingData(username, password);
+    console.log(data.token);
+    dispatch({
+      type: "TOKEN",
+      payload: {
+        token: data.token,
+        username: username,
+      },
+    });
+    navigate("/home");
+  }
+
   return (
     <>
       <button
@@ -47,7 +63,9 @@ export const Modal = () => {
                 onChange={(e) => setPassword(e.target.value)}
                 value={password}
               />
-              <button type="submit">Login</button>
+              <button type="submit" onClick={handleSubmit}>
+                Login
+              </button>
             </form>
           </div>
         </CModalBody>
