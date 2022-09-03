@@ -1,73 +1,74 @@
 .middleprofile {
-    /* background-color: rgb(75, 75, 75); */
-    padding-top: 5px;
-    font-family: Arial;
-    padding-left: 0%;
-    padding-right: 0%;
-
+  /* background-color: rgb(75, 75, 75); */
+  padding-top: 5px;
+  font-family: Arial;
+  padding-left: 0%;
+  padding-right: 0%;
 }
 
 .header {
-      height: 6%;
+  height: 6%;
 }
 
 .arrowicon {
-    border: black;
+  border: black;
 }
 
 .fondo-profile {
-    background-image: url("https://c4.wallpaperflare.com/wallpaper/414/160/33/mac-os-x-os-x-big-sur-hd-wallpaper-preview.jpg");
-    height: 200px;
-    
+  background-image: url("https://c4.wallpaperflare.com/wallpaper/414/160/33/mac-os-x-os-x-big-sur-hd-wallpaper-preview.jpg");
+  height: 200px;
 }
 
 .avatar-profile {
-    height: 80%;
-    background-color: black;
-    padding: 0.6%;
-    margin-top: 20%;
+  height: 80%;
+  background-color: black;
+  padding: 0.6%;
+  margin-top: 20%;
 }
 
 .texto-gris {
-    color: rgb(130, 130, 130);
+  color: rgb(130, 130, 130);
 }
 .usuario-profile {
-    margin-top: -2%;
-    margin-bottom: 4%;
+  margin-top: -2%;
+  margin-bottom: 4%;
 }
 .btn-black {
-    border-color: rgba(255, 255, 255, 0.537);
-    width: 25%;
-    font-weight: bold;
-    font-size: 100%;
-    margin-top: -40%;
-    margin-left: 74%;
+  border-color: rgba(255, 255, 255, 0.537);
+  width: 25%;
+  font-weight: bold;
+  font-size: 100%;
+  margin-top: -40%;
+  margin-left: 74%;
 }
 
 .btn-black:hover {
-    background-color: rgba(129, 129, 129, 0.165);
-    border-color: rgba(255, 255, 255, 0.537);
+  background-color: rgba(129, 129, 129, 0.165);
+  border-color: rgba(255, 255, 255, 0.537);
 }
 .sections {
-    justify-content: space-evenly;
+  justify-content: space-evenly;
 }
 
 hr {
-    color: gray;
-    width: 104%;
-    margin-left: -2%;
+  color: gray;
+  width: 104%;
+  margin-left: -2%;
 }
 .avatar-icon {
-    height: 3rem;
+  height: 3rem;
 }
 
 .tweet {
-    margin-top: -4%;
-    margin-left: 13%;
-    
+  margin-top: -4%;
+  margin-left: 13%;
 }
 
 .botones {
-    justify-content: space-evenly;
+  justify-content: space-evenly;
+}
 
+a {
+  color: white;
+  text-decoration: none;
 }

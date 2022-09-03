@@ -23,7 +23,6 @@ export const Modal = () => {
   async function handleSubmit() {
     const { data } = await sendingData(username, password);
     const user = await axios.get("http://localhost:8000/user/" + username);
-    console.log(user.data);
     dispatch({
       type: "TOKEN",
       payload: {

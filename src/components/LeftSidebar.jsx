@@ -10,8 +10,12 @@ import Person2OutlinedIcon from "@mui/icons-material/Person2Outlined";
 import PendingOutlinedIcon from "@mui/icons-material/PendingOutlined";
 import MoreHorizIcon from "@mui/icons-material/MoreHoriz";
 import "../LeftSidebar.css";
+import { Link } from "react-router-dom";
+import { useSelector } from "react-redux";
 
 export const LeftSidebar = () => {
+  const store = useSelector((state) => state);
+  const myUser = store.login;
   return (
     <div className="col-lg-3">
       <div className="row text-start justify-content-end leftsidebar">
@@ -40,7 +44,8 @@ export const LeftSidebar = () => {
             <FeaturedPlayListOutlinedIcon className="me-3 fs-2" /> Lists
           </button>
           <button className="btn btn-dark text-light rounded-pill mb-1 btn-lg mt-1">
-            <Person2OutlinedIcon className="me-3 fs-2" /> Profile
+            <Person2OutlinedIcon className="me-3 fs-2" />
+            <Link to={"/profile/" + myUser.username}>Profile</Link>
           </button>
           <button className="btn btn-dark text-light rounded-pill mb-1 btn-lg mt-1">
             <PendingOutlinedIcon className="me-3 fs-2" /> More
