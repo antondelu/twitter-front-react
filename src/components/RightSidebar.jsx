@@ -4,7 +4,7 @@ import "./sidebar.css";
 
 export const RightSidebar = () => {
   return (
-    <div className="col-md-4 text-light">
+    <div className="col-md-4">
       <div className="group">
         <svg className="icon" aria-hidden="true" viewBox="0 0 24 24">
           <g>
@@ -14,10 +14,8 @@ export const RightSidebar = () => {
         <input placeholder="Search" type="search" className="input" />
       </div>
       <div className="card-body pt-2">
-        <div className="card-header fw-bold mt-1 contentTrendsTitle">
-          <h4 className="text-start ms-3 mb-4 mt-2 fw-bold title">
-            Trends for you
-          </h4>
+        <div className="card-header mt-1 contentTrendsTitle">
+          <h4 className="text-start ms-3 mb-4 mt-2 title">Trends for you</h4>
         </div>
 
         <div className="trends">
@@ -25,7 +23,7 @@ export const RightSidebar = () => {
             <p>Trending in Uruguay</p>
             <h2>···</h2>
           </div>
-          <h5 className="card-title fw-light fw-bold card2">Peñarol</h5>
+          <h5 className="card-title card2">Peñarol</h5>
           <p className="amountTwetts">34k Tweets</p>
         </div>
 
@@ -34,7 +32,7 @@ export const RightSidebar = () => {
             <p>Trending in Uruguay</p>
             <h2>···</h2>
           </div>
-          <h5 className="card-title fw-light fw-bold card2">Suarez</h5>
+          <h5 className="card-title card2">Suarez</h5>
           <p className="amountTwetts">800k Tweets</p>
         </div>
 
@@ -43,7 +41,7 @@ export const RightSidebar = () => {
             <p>Politics . Trending</p>
             <h2>···</h2>
           </div>
-          <h5 className="card-title fw-light fw-bold card2">Cristina</h5>
+          <h5 className="card-title card2">Cristina</h5>
           <p className="amountTwetts">57.7k Tweets</p>
         </div>
 
@@ -52,7 +50,7 @@ export const RightSidebar = () => {
             <p>Trending in Uruguay</p>
             <h2>···</h2>
           </div>
-          <h5 className="card-title fw-light fw-bold card2">Dubai</h5>
+          <h5 className="card-title card2">Dubai</h5>
           <p className="amountTwetts">36.7k Tweets</p>
         </div>
 
@@ -61,7 +59,7 @@ export const RightSidebar = () => {
             <p>Trending in Uruguay</p>
             <h2>···</h2>
           </div>
-          <h5 className="card-title fw-light fw-bold  card2">Darwin Nuñez</h5>
+          <h5 className="card-title card2">Darwin Nuñez</h5>
           <p className="amountTwetts">5.7k Tweets</p>
         </div>
 
@@ -70,7 +68,7 @@ export const RightSidebar = () => {
             <p>Trending in Uruguay</p>
             <h2>···</h2>
           </div>
-          <h5 className="card-title fw-light fw-bold card2">Pfizer</h5>
+          <h5 className="card-title card2">Pfizer</h5>
           <p className="amountTwetts">39.7k Tweets</p>
         </div>
 
@@ -79,7 +77,7 @@ export const RightSidebar = () => {
             <p className="trendTitle">Sports . Trending</p>
             <h2>···</h2>
           </div>
-          <h5 className="card-title fw-light fw-bold card2">Nacional</h5>
+          <h5 className="card-title card2">Nacional</h5>
           <p className="amountTwetts">80.7k Tweets</p>
         </div>
 
@@ -88,23 +86,23 @@ export const RightSidebar = () => {
             <p>Trending in Uruguay</p>
             <h2>···</h2>
           </div>
-          <h5 className="card-title fw-light fw-bold card2">Tremendo</h5>
+          <h5 className="card-title card2">Tremendo</h5>
           <p className="amountTwetts">32.7k Tweets</p>
         </div>
         {/* <p className="showmore">Show more</p> */}
       </div>
 
-      <div className="row text-white mt-3">
+      <div className="row mt-3">
         <div>
           <div className="form-floating mb-3">
             <div className="card-body whotofollow">
-              <div className="d-flex justify-content-between">
+              <div className="">
                 <div className="d-flex">
-                  <div className="card-header fw-bold titleFollow">
-                    <h4 className="text-start ms-3 mt-3 mt-2 mb-3 fw-bold title">
+                  <div className="card-header titleFollow">
+                    <h4 className="text-start ms-3 mt-3 mt-2 mb-3 title">
                       Who to follow
                     </h4>
-                    <div className="filaswhotofollow">
+                    <div className="">
                       <div className="container d-flex text-start">
                         <div className="row">
                           <div className="col-2 me-3">
@@ -116,8 +114,33 @@ export const RightSidebar = () => {
                           </div>
                         </div>
                         <div className="col-8">
-                          <p className="nombreusuario mb-0 mt-2">
-                            NombreUsuario
+                          <p id="nombreusuario" className="nombreusuario">
+                            Nombre Usuario
+                          </p>
+                          <p className="usuario">@Usuario</p>
+                        </div>
+                        <div className="col-2">
+                          <button className="buttonFollow">Follow</button>
+                        </div>
+                      </div>
+                    </div>
+                    <div className="">
+                      <div className="container d-flex text-start">
+                        <div className="row">
+                          <div className="col-2 me-3">
+                            <img
+                              className="rounded-circle avatar"
+                              src="https://innostudio.de/fileuploader/images/default-avatar.png"
+                              alt=""
+                            />
+                          </div>
+                        </div>
+                        <div className="col-8">
+                          <p
+                            id="nombreusuario"
+                            className="nombreusuario mb-0 mt-2"
+                          >
+                            Nombre Usuario
                           </p>
                           <p className="usuario">@Usuario</p>
                         </div>
@@ -138,8 +161,11 @@ export const RightSidebar = () => {
                           </div>
                         </div>
                         <div className="col-8">
-                          <p className="nombreusuario mb-0 mt-2">
-                            NombreUsuario
+                          <p
+                            id="nombreusuario"
+                            className="nombreusuario mb-0 mt-2"
+                          >
+                            Nombre Usuario
                           </p>
                           <p className="usuario">@Usuario</p>
                         </div>
@@ -148,29 +174,9 @@ export const RightSidebar = () => {
                         </div>
                       </div>
                     </div>
-                    <div className="filaswhotofollow">
-                      <div className="container d-flex text-start">
-                        <div className="row">
-                          <div className="col-2 me-3">
-                            <img
-                              className="rounded-circle avatar"
-                              src="https://innostudio.de/fileuploader/images/default-avatar.png"
-                              alt=""
-                            />
-                          </div>
-                        </div>
-                        <div className="col-8">
-                          <p className="nombreusuario mb-0 mt-2">
-                            NombreUsuario
-                          </p>
-                          <p className="usuario">@Usuario</p>
-                        </div>
-                        <div className="col-2">
-                          <button className="buttonFollow">Follow</button>
-                        </div>
-                      </div>
-                    </div>
-                    <p className="showmore">Show more</p>
+                    <p id="showmore" className="showmore">
+                      Show more
+                    </p>
                   </div>
                 </div>
               </div>
