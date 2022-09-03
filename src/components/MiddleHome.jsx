@@ -8,10 +8,13 @@ import LoopIcon from "@mui/icons-material/Loop";
 import { useSelector } from "react-redux";
 import axios from "axios";
 import { useDispatch } from "react-redux";
+import { Link } from "react-router-dom";
+import Like from "./Like";
 
 function MiddleHome() {
   const [tweet, setTweet] = useState("");
   const [tweets, setTweets] = useState([]);
+  const [likeChanged, setLikeChanged] = useState(false);
   const store = useSelector((state) => state);
   const myUser = store.login;
 
@@ -24,7 +27,7 @@ function MiddleHome() {
       setTweets(response.data);
     };
     getTweets();
-  }, []);
+  }, [likeChanged]);
 
   async function addTweets(tweet) {
     console.log(myUser.token);
@@ -105,7 +108,11 @@ function MiddleHome() {
                         height="50px"
                       />
                     </div>
+
                     <div className="d-flex flex-column justify-content-between">
+                      <Link to={`/${element.username}`}>
+                        {element.username}
+                      </Link>
                       {element.text}
                       <div className="iconosTweet d-flex justify-content-around">
                         <div>
@@ -115,16 +122,11 @@ function MiddleHome() {
                           <LoopIcon /> 3
                         </div>
 
-                        <div>
-                          {!element.likes.includes(myUser.id) ? (
-                            <span style={{ color: "#fa167f" }}>
-                              <FavoriteIcon />
-                            </span>
-                          ) : (
-                            <FavoriteIcon />
-                          )}{" "}
-                          {element.likes.length}
-                        </div>
+                        <Like
+                          tweet={element}
+                          setLikeChanged={setLikeChanged}
+                          likeChanged={likeChanged}
+                        />
                         <div>
                           <FileUploadIcon />
                         </div>

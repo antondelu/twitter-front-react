@@ -4,7 +4,7 @@ import "bootstrap/dist/css/bootstrap.min.css";
 import { Home } from "./containers/ContainerHome";
 import { Route, Routes } from "react-router-dom";
 import { Login } from "./components/Login";
-import { Profile } from "./containers/ContainerProfile";
+import { Profile } from "./containers/ContainerProfile.jsx";
 
 function App() {
   return (
@@ -12,7 +12,7 @@ function App() {
       <Routes>
         <Route path="/" element={<Login />} />
         <Route path="/home" element={<Home />} />
-        <Route path="/profile" element={<Profile />} />
+        <Route path="/:username" element={<Profile />} />
       </Routes>
     </div>
   );

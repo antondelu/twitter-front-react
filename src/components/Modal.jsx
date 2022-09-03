@@ -21,7 +21,7 @@ export const Modal = () => {
   const navigate = useNavigate();
   async function handleSubmit() {
     const { data } = await sendingData(username, password);
-    console.log(data.token);
+
     dispatch({
       type: "TOKEN",
       payload: {
