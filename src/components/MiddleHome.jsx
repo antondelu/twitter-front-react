@@ -36,7 +36,7 @@ function MiddleHome() {
       },
     });
     console.log(response.data);
-    setTweet(response.data);
+    setTweet("");
     return response;
   }
 
