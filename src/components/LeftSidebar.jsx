@@ -28,27 +28,31 @@ export const LeftSidebar = () => {
           </button>
           <button className="btn btn-dark text-light rounded-pill mb-1 btn-lg mt-1">
             <TagIcon className="me-3 fs-2" />
-            Explore
+            <Link to={"/error"}>Explore</Link>
           </button>
           <button className="btn btn-dark text-light rounded-pill mb-1 btn-lg mt-1">
             <NotificationsNoneIcon className="me-3 fs-2" />
-            Notifications
+            <Link to={"/error"}> Notifications</Link>
           </button>
           <button className="btn btn-dark text-light rounded-pill mb-1 btn-lg mt-1">
-            <MailOutlineOutlinedIcon className="me-3 fs-2" /> Messages
+            <MailOutlineOutlinedIcon className="me-3 fs-2" />
+            <Link to={"/error"}>Messages</Link>
           </button>
           <button className="btn btn-dark text-light rounded-pill mb-1 btn-lg mt-1">
-            <BookmarkBorderOutlinedIcon className="me-3 fs-2" /> Bookmark
+            <BookmarkBorderOutlinedIcon className="me-3 fs-2" />
+            <Link to={"/error"}>Bookmark</Link>
           </button>
           <button className="btn btn-dark text-light rounded-pill mb-1 btn-lg mt-1">
-            <FeaturedPlayListOutlinedIcon className="me-3 fs-2" /> Lists
+            <FeaturedPlayListOutlinedIcon className="me-3 fs-2" />
+            <Link to={"/error"}>Lists</Link>
           </button>
           <button className="btn btn-dark text-light rounded-pill mb-1 btn-lg mt-1">
             <Person2OutlinedIcon className="me-3 fs-2" />
             <Link to={"/" + myUser.username}>Profile</Link>
           </button>
           <button className="btn btn-dark text-light rounded-pill mb-1 btn-lg mt-1">
-            <PendingOutlinedIcon className="me-3 fs-2" /> More
+            <PendingOutlinedIcon className="me-3 fs-2" />
+            <Link to={"/error"}>More</Link>
           </button>
           <button className="btn btn-primary text-center fs-5 rounded-pill btn-lg p-2 ps-5 pe-5 mt-3 fw-bold">
             Tweet

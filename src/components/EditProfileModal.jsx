@@ -22,6 +22,7 @@ export const ModalEditProfile = () => {
   const [email, setEmail] = useState("");
   const [bio, setBio] = useState("");
   const [image, setImage] = useState("");
+  const [loading, setLoading] = useState(false);
   const [coverImage, setCoverImage] = useState("");
   const store = useSelector((state) => state);
   const myUser = store.login;
@@ -30,7 +31,7 @@ export const ModalEditProfile = () => {
   const navigate = useNavigate();
   async function editProfile() {
     const response = await axios({
-      method: "patch",
+      method: "post",
       url: "http://localhost:8000/user",
       data: {
         firstname: firstname,
@@ -43,12 +44,52 @@ export const ModalEditProfile = () => {
       },
       headers: {
         Authorization: `Bearer ${myUser.token}`,
-        "Content-Type": "multipart/form-data",
+        "Content-Type": "application/json",
       },
     });
-    console.log(response);
+    console.log(response.data);
     return response;
   }
+
+  const upLoadImage = async (e) => {
+    const files = e.target.files;
+    const data = new FormData();
+    data.append("file", files[0]);
+    data.append("upload_preset", "twitter");
+    setLoading(true);
+    const res = await fetch(
+      "https://api.cloudinary.com/v1_1/mdeluca/image/upload",
+      {
+        method: "POST",
+        body: data,
+      }
+    );
+    const file = await res.json();
+    console.log(res);
+    setImage(file.secure_url);
+    console.log(file.secure_url);
+    setLoading(false);
+  };
+
+  const upLoadImageCover = async (e) => {
+    const files = e.target.files;
+    const data = new FormData();
+    data.append("file", files[0]);
+    data.append("upload_preset", "twitter");
+    setLoading(true);
+    const res = await fetch(
+      "https://api.cloudinary.com/v1_1/mdeluca/image/upload",
+      {
+        method: "POST",
+        body: data,
+      }
+    );
+    const file = await res.json();
+    console.log(res);
+    setCoverImage(file.secure_url);
+    console.log(file.secure_url);
+    setLoading(false);
+  };
 
   return (
     <>
@@ -117,19 +158,12 @@ export const ModalEditProfile = () => {
                 </div>
                 <div>
                   <label>Image</label>
-                  <input
-                    type="file"
-                    onChange={(e) => setImage(e.target.value)}
-                    value={image}
-                  />
+                  <input type="file" onChange={upLoadImage} />
+                  {/* {loading ? <h3>Cargando imagen</h3> : <img src={image} />} */}
                 </div>
                 <div>
                   <label>CoverImage </label>
-                  <input
-                    type="file"
-                    onChange={(e) => setCoverImage(e.target.value)}
-                    value={coverImage}
-                  />
+                  <input type="file" onChange={upLoadImageCover} />
                 </div>
                 <div className="d-flex justify-content-center m-2 mt-4">
                   <CButton color="primary" onClick={() => editProfile()}>

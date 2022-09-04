@@ -25,6 +25,7 @@ export const MiddleProfile = () => {
       const response = await axios.get(`http://localhost:8000/${username}`, {
         headers: { Authorization: "Bearer " + myUser.token },
       });
+      console.log(response.data);
       setInfoUser(response.data);
     };
     userNameProfile();
@@ -56,7 +57,13 @@ export const MiddleProfile = () => {
           </div>
         </div>
         <div className="row profilesection">
-          <div className="fondo-profile text-start">
+          <div
+            className="fondo-profile text-start"
+            style={{
+              backgroundImage: ` url(${infoUser.coverImage})`,
+              height: "200px",
+            }}
+          >
             <img
               className="rounded-circle avatar-profile ms-2"
               src={infoUser.image}

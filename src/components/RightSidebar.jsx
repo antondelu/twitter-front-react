@@ -4,6 +4,7 @@ import { useSelector } from "react-redux";
 import "./sidebar.css";
 import axios from "axios";
 import { useEffect, useState } from "react";
+import { Link } from "react-router-dom";
 
 export const RightSidebar = () => {
   const [recommendedUser, setRecommendedUser] = useState([]);
@@ -137,7 +138,9 @@ export const RightSidebar = () => {
                                 id="nombreusuario"
                                 className="nombreusuario mb-0 mt-2"
                               >
-                                {element.firstname} {element.lastname}
+                                <Link to={`/${element.username}`}>
+                                  {element.firstname} {element.lastname}
+                                </Link>
                               </p>
                               <p className="usuario">@{element.username}</p>
                             </div>
