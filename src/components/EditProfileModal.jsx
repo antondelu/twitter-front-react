@@ -10,11 +10,11 @@ import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import "bootstrap/dist/css/bootstrap.min.css";
 import { useDispatch, useSelector } from "react-redux";
-
+import { Link } from "react-router-dom";
 import "../EditProfileModal.css";
 import axios from "axios";
 
-export const ModalEditProfile = () => {
+export const ModalEditProfile = ({ refresh, setRefresh }) => {
   const [visible, setVisible] = useState(false);
   const [firstname, setFirstname] = useState("");
   const [password, setPassword] = useState("");
@@ -47,7 +47,8 @@ export const ModalEditProfile = () => {
         "Content-Type": "application/json",
       },
     });
-    console.log(response.data);
+    setRefresh(!refresh);
+    setVisible(false);
     return response;
   }
 
@@ -167,7 +168,7 @@ export const ModalEditProfile = () => {
                 </div>
                 <div className="d-flex justify-content-center m-2 mt-4">
                   <CButton color="primary" onClick={() => editProfile()}>
-                    Save changes
+                    Guardar
                   </CButton>
                 </div>
               </form>

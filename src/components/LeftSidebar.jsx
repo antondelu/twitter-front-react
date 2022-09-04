@@ -21,10 +21,15 @@ export const LeftSidebar = () => {
       <div className="row text-start justify-content-end leftsidebar">
         <div className="col-md-7">
           <button className="btn btn-dark text-light text-start rounded-pill mb-1 btn-lg col-md-7 mt-1">
-            <TwitterIcon className="fs-2" />
+            <Link to="/home">
+              <TwitterIcon className="fs-2" />
+            </Link>
           </button>
           <button className="btn btn-dark text-light rounded-pill mb-1 btn-lg fw-bold mt-1">
-            <HomeRoundedIcon className="me-3 fs-2" /> Home
+            <Link to="/home">
+              <HomeRoundedIcon className="me-3 fs-2" />
+              Home{" "}
+            </Link>
           </button>
           <button className="btn btn-dark text-light rounded-pill mb-1 btn-lg mt-1">
             <TagIcon className="me-3 fs-2" />

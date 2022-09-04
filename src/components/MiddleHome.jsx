@@ -13,10 +13,26 @@ import Like from "./Like";
 function MiddleHome({ refresh, setRefresh }) {
   const [tweet, setTweet] = useState("");
   const [tweets, setTweets] = useState([]);
+  const [infoUser, setInfoUser] = useState([]);
   const store = useSelector((state) => state);
   const myUser = store.login;
 
   const dispatch = useDispatch();
+
+  useEffect(() => {
+    const userNameProfile = async () => {
+      const response = await axios.get(
+        `http://localhost:8000/${myUser.username}`,
+        {
+          headers: { Authorization: "Bearer " + myUser.token },
+        }
+      );
+      console.log(response.data);
+      setInfoUser(response.data);
+    };
+    userNameProfile();
+  }, [refresh]);
+
   useEffect(() => {
     const getTweets = async () => {
       const response = await axios.get("http://localhost:8000/home", {
@@ -57,7 +73,7 @@ function MiddleHome({ refresh, setRefresh }) {
             <div className="row d-flex ">
               <div className="fotoPerfil me-2">
                 <img
-                  src="/noProfileLogo.jpg"
+                  src={infoUser.image}
                   className="imgFotoPerfil"
                   alt="foto-perfil"
                   width="50px"
@@ -97,7 +113,7 @@ function MiddleHome({ refresh, setRefresh }) {
                   <li className="tweetHome d-flex" key={element.id}>
                     <div className="fotoPerfil me-2">
                       <img
-                        src="/noProfileLogo.jpg"
+                        src={element.user.image}
                         className="imgFotoPerfil"
                         alt="foto-perfil"
                         width="50px"
