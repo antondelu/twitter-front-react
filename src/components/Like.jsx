@@ -3,7 +3,7 @@ import FavoriteIcon from "@mui/icons-material/Favorite";
 import { useSelector } from "react-redux";
 import axios from "axios";
 
-function Like({ tweet, setLikeChanged, likeChanged }) {
+function Like({ tweet, setRefresh, refresh }) {
   const [user, setUser] = useState(null);
   const store = useSelector((state) => state);
   const myUser = store.login;
@@ -32,7 +32,7 @@ function Like({ tweet, setLikeChanged, likeChanged }) {
         "Content-Type": "application/json",
       },
     });
-    setLikeChanged(!likeChanged);
+    setRefresh(!refresh);
     return response;
   }
 

@@ -5,8 +5,9 @@ import "./sidebar.css";
 import axios from "axios";
 import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
+import FollowRightSidebar from "./FollowRightSidebar";
 
-export const RightSidebar = () => {
+export const RightSidebar = ({ refresh, setRefresh }) => {
   const [recommendedUser, setRecommendedUser] = useState([]);
   const store = useSelector((state) => state);
   const myUser = store.login;
@@ -18,7 +19,7 @@ export const RightSidebar = () => {
       setRecommendedUser(response.data);
     };
     userNameProfile();
-  }, []);
+  }, [refresh]);
 
   return (
     <div className="col-md-4">
@@ -145,7 +146,11 @@ export const RightSidebar = () => {
                               <p className="usuario">@{element.username}</p>
                             </div>
                             <div className="col-2">
-                              <button className="buttonFollow">Follow</button>
+                              <FollowRightSidebar
+                                user={element}
+                                refresh={refresh}
+                                setRefresh={setRefresh}
+                              />
                             </div>
                           </div>
                         </div>

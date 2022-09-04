@@ -3,7 +3,6 @@ import "../MiddleProfile.css";
 import ArrowBackIcon from "@mui/icons-material/ArrowBack";
 import ModeCommentOutlinedIcon from "@mui/icons-material/ModeCommentOutlined";
 import RepeatOneOutlinedIcon from "@mui/icons-material/RepeatOneOutlined";
-import FavoriteBorderOutlinedIcon from "@mui/icons-material/FavoriteBorderOutlined";
 import IosShareOutlinedIcon from "@mui/icons-material/IosShareOutlined";
 import SignalCellularAltOutlinedIcon from "@mui/icons-material/SignalCellularAltOutlined";
 import { Link, useParams } from "react-router-dom";
@@ -12,10 +11,10 @@ import axios from "axios";
 import { useEffect, useState } from "react";
 import { ModalEditProfile } from "./EditProfileModal";
 import Like from "./Like";
+import FollowProfile from "./FollowProfile";
 
-export const MiddleProfile = () => {
+export const MiddleProfile = ({ refresh, setRefresh }) => {
   const [infoUser, setInfoUser] = useState([]);
-  const [likeChanged, setLikeChanged] = useState([]);
   const store = useSelector((state) => state);
   const myUser = store.login;
   const { username } = useParams();
@@ -29,7 +28,7 @@ export const MiddleProfile = () => {
       setInfoUser(response.data);
     };
     userNameProfile();
-  }, [likeChanged]);
+  }, [refresh]);
 
   async function deleteTweet(id) {
     console.log(id);
@@ -49,11 +48,10 @@ export const MiddleProfile = () => {
           </button>
           <div className="col-md-10">
             <h3 className="text-white text-start ms-4 fw-bold">{username}</h3>
-            {infoUser?.tweets?.length > 0 && (
-              <h6 className="text-start ms-4 texto-gris">
-                {infoUser.tweets.length} tweets
-              </h6>
-            )}
+
+            <h6 className="text-start ms-4 texto-gris">
+              {infoUser?.tweets?.length} tweets
+            </h6>
           </div>
         </div>
         <div className="row profilesection">
@@ -66,25 +64,32 @@ export const MiddleProfile = () => {
           >
             <img
               className="rounded-circle avatar-profile ms-2"
-              src={infoUser.image}
+              src={infoUser?.image}
               alt=""
             />
             <h3 className="text-white text-start ms-4 fw-bold mt-3w">
-              {infoUser.firstname} {infoUser.lastname}
+              {infoUser?.firstname} {infoUser?.lastname}
             </h3>
-            <ModalEditProfile />
+            {infoUser?.username === myUser.username ? (
+              <ModalEditProfile />
+            ) : (
+              <FollowProfile
+                user={infoUser}
+                refresh={refresh}
+                setRefresh={setRefresh}
+              />
+            )}
+
             <h6 className="text-start ms-4 text-white">
-              {infoUser.description}
+              {infoUser?.description}
             </h6>
             <h6 className="text-start ms-4 texto-gris">
               Montevideo - Joined September 2022
             </h6>
-            {infoUser?.followers?.length && infoUser?.following?.length > 0 && (
-              <h6 className="text-start ms-4 text-white">
-                {infoUser.following.length} Following -{" "}
-                {infoUser.followers.length} Followers
-              </h6>
-            )}
+            <h6 className="text-start ms-4 text-white">
+              {infoUser?.following?.length} Following -{" "}
+              {infoUser?.followers?.length} Followers
+            </h6>
 
             <div className="container d-flex sections">
               <div className="text-white fw-bold mt-3">Tweets</div>
@@ -128,8 +133,8 @@ export const MiddleProfile = () => {
                       </button>
                       <Like
                         tweet={element}
-                        likeChanged={likeChanged}
-                        setLikeChanged={setLikeChanged}
+                        refresh={refresh}
+                        setRefresh={setRefresh}
                       />
                       <button className="btn btn-dark rounded rounded-pill texto-gris fw-bold mt-3">
                         <IosShareOutlinedIcon />
