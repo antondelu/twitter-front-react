@@ -6,6 +6,8 @@ import FileUploadIcon from "@mui/icons-material/FileUpload";
 import LoopIcon from "@mui/icons-material/Loop";
 import { useSelector } from "react-redux";
 import axios from "axios";
+import { useDispatch } from "react-redux";
+import { Link } from "react-router-dom";
 import Like from "./Like";
 
 function MiddleHome() {
@@ -15,6 +17,7 @@ function MiddleHome() {
   const store = useSelector((state) => state);
   const myUser = store.login;
 
+  const dispatch = useDispatch();
   useEffect(() => {
     const getTweets = async () => {
       const response = await axios.get("http://localhost:8000/home", {
@@ -36,6 +39,10 @@ function MiddleHome() {
       },
     });
     setTweet("");
+    dispatch({
+      type: "CREAR_TWEET",
+      payload: response.data._id,
+    });
     return response;
   }
 
@@ -98,7 +105,11 @@ function MiddleHome() {
                         height="50px"
                       />
                     </div>
+
                     <div className="d-flex flex-column justify-content-between">
+                      <Link to={`/${element.username}`}>
+                        {element.username}
+                      </Link>
                       {element.text}
                       <div className="iconosTweet d-flex justify-content-around">
                         <div>
@@ -107,6 +118,7 @@ function MiddleHome() {
                         <div>
                           <LoopIcon /> 3
                         </div>
+
                         <Like
                           tweet={element}
                           likeChanged={likeChanged}

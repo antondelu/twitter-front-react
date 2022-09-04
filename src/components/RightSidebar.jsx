@@ -1,8 +1,24 @@
 // import { CButton, CForm, CFormInput, BsSearch } from "@coreui/react";
 import "bootstrap/dist/css/bootstrap.min.css";
+import { useSelector } from "react-redux";
 import "./sidebar.css";
+import axios from "axios";
+import { useEffect, useState } from "react";
 
 export const RightSidebar = () => {
+  const [recommendedUser, setRecommendedUser] = useState([]);
+  const store = useSelector((state) => state);
+  const myUser = store.login;
+  useEffect(() => {
+    const userNameProfile = async () => {
+      const response = await axios.get(`http://localhost:8000/who_to_follow`, {
+        headers: { Authorization: "Bearer " + myUser.token },
+      });
+      setRecommendedUser(response.data);
+    };
+    userNameProfile();
+  }, []);
+
   return (
     <div className="col-md-4">
       <div className="group">
@@ -102,78 +118,37 @@ export const RightSidebar = () => {
                     <h4 className="text-start ms-3 mt-3 mt-2 mb-3 title">
                       Who to follow
                     </h4>
-                    <div className="">
-                      <div className="container d-flex text-start">
-                        <div className="row">
-                          <div className="col-2 me-3">
-                            <img
-                              className="rounded-circle avatar"
-                              src="https://innostudio.de/fileuploader/images/default-avatar.png"
-                              alt=""
-                            />
+
+                    {recommendedUser.map((element, index) => {
+                      return (
+                        <div className="filaswhotofollow" key={index}>
+                          <div className="container d-flex text-start">
+                            <div className="row">
+                              <div className="col-2 me-3">
+                                <img
+                                  className="rounded-circle avatar"
+                                  src={element.image}
+                                  alt=""
+                                />
+                              </div>
+                            </div>
+                            <div className="col-8">
+                              <p
+                                id="nombreusuario"
+                                className="nombreusuario mb-0 mt-2"
+                              >
+                                {element.firstname} {element.lastname}
+                              </p>
+                              <p className="usuario">@{element.username}</p>
+                            </div>
+                            <div className="col-2">
+                              <button className="buttonFollow">Follow</button>
+                            </div>
                           </div>
                         </div>
-                        <div className="col-8">
-                          <p id="nombreusuario" className="nombreusuario">
-                            Nombre Usuario
-                          </p>
-                          <p className="usuario">@Usuario</p>
-                        </div>
-                        <div className="col-2">
-                          <button className="buttonFollow">Follow</button>
-                        </div>
-                      </div>
-                    </div>
-                    <div className="">
-                      <div className="container d-flex text-start">
-                        <div className="row">
-                          <div className="col-2 me-3">
-                            <img
-                              className="rounded-circle avatar"
-                              src="https://innostudio.de/fileuploader/images/default-avatar.png"
-                              alt=""
-                            />
-                          </div>
-                        </div>
-                        <div className="col-8">
-                          <p
-                            id="nombreusuario"
-                            className="nombreusuario mb-0 mt-2"
-                          >
-                            Nombre Usuario
-                          </p>
-                          <p className="usuario">@Usuario</p>
-                        </div>
-                        <div className="col-2">
-                          <button className="buttonFollow">Follow</button>
-                        </div>
-                      </div>
-                    </div>
-                    <div className="filaswhotofollow">
-                      <div className="container d-flex text-start">
-                        <div className="row">
-                          <div className="col-2 me-3">
-                            <img
-                              className="rounded-circle avatar"
-                              src="https://innostudio.de/fileuploader/images/default-avatar.png"
-                              alt=""
-                            />
-                          </div>
-                        </div>
-                        <div className="col-8">
-                          <p
-                            id="nombreusuario"
-                            className="nombreusuario mb-0 mt-2"
-                          >
-                            Nombre Usuario
-                          </p>
-                          <p className="usuario">@Usuario</p>
-                        </div>
-                        <div className="col-2">
-                          <button className="buttonFollow">Follow</button>
-                        </div>
-                      </div>
-                    </div>
+                      );
+                    })}
+
                     <p id="showmore" className="showmore">
                       Show more
                     </p>

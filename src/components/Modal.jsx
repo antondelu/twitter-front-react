@@ -22,12 +22,11 @@ export const Modal = () => {
   const navigate = useNavigate();
   async function handleSubmit() {
     const { data } = await sendingData(username, password);
-    const user = await axios.get("http://localhost:8000/user/" + username);
     dispatch({
       type: "TOKEN",
       payload: {
         token: data.token,
-        ...user.data,
+        username: username,
       },
     });
     navigate("/home");

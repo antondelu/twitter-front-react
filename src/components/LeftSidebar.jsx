@@ -45,7 +45,7 @@ export const LeftSidebar = () => {
           </button>
           <button className="btn btn-dark text-light rounded-pill mb-1 btn-lg mt-1">
             <Person2OutlinedIcon className="me-3 fs-2" />
-            <Link to={"/profile/" + myUser.username}>Profile</Link>
+            <Link to={"/" + myUser.username}>Profile</Link>
           </button>
           <button className="btn btn-dark text-light rounded-pill mb-1 btn-lg mt-1">
             <PendingOutlinedIcon className="me-3 fs-2" /> More
