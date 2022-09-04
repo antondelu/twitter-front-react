@@ -10,10 +10,9 @@ import { useDispatch } from "react-redux";
 import { Link } from "react-router-dom";
 import Like from "./Like";
 
-function MiddleHome() {
+function MiddleHome({ refresh, setRefresh }) {
   const [tweet, setTweet] = useState("");
   const [tweets, setTweets] = useState([]);
-  const [likeChanged, setLikeChanged] = useState(false);
   const store = useSelector((state) => state);
   const myUser = store.login;
 
@@ -26,7 +25,7 @@ function MiddleHome() {
       setTweets(response.data);
     };
     getTweets();
-  }, [likeChanged]);
+  }, [refresh]);
 
   async function addTweets(tweet) {
     const response = await axios({
@@ -121,8 +120,8 @@ function MiddleHome() {
 
                         <Like
                           tweet={element}
-                          likeChanged={likeChanged}
-                          setLikeChanged={setLikeChanged}
+                          refresh={refresh}
+                          setRefresh={setRefresh}
                         />
                         <div>
                           <FileUploadIcon />

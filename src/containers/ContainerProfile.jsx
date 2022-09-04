@@ -2,12 +2,12 @@ import { LeftSidebar } from "../components/LeftSidebar";
 import { MiddleProfile } from "../components/MiddleProfile";
 import { RightSidebar } from "../components/RightSidebar";
 
-export const Profile = () => {
+export const Profile = ({ refresh, setRefresh }) => {
   return (
     <div className="row">
       <LeftSidebar />
-      <MiddleProfile />
-      <RightSidebar />
+      <MiddleProfile refresh={refresh} setRefresh={setRefresh} />
+      <RightSidebar refresh={refresh} setRefresh={setRefresh} />
     </div>
   );
 };
