@@ -1,0 +1,74 @@
+.inicia-sesion {
+  font-family: Verdana;
+  font-weight: bold;
+  padding: 10%;
+  margin-left: 13%;
+}
+.cross {
+  margin-right: -60%;
+  margin-left: 50%;
+}
+
+.cross:hover {
+  background-color: black;
+  border-color: black;
+}
+
+.btngoogle-modal {
+  margin-top: 10px;
+  background-color: white;
+  border-color: black;
+  height: 45px;
+  width: 300px;
+  margin-left: 20%;
+}
+
+.btnapple-modal {
+  margin-left: 75px;
+  margin-top: 15px;
+  background-color: white;
+  border-color: black;
+  height: 45px;
+  width: 300px;
+  font-size: 1rem;
+}
+
+span {
+  margin-left: 15%;
+}
+
+.btnlogin-modal {
+  margin-left: 75px;
+  margin-top: 10px;
+  background-color: white;
+  border-color: black;
+  height: 45px;
+  width: 300px;
+  font-size: 1rem;
+  padding-left: 5%;
+}
+
+.btn-forgot-password {
+  margin-left: 75px;
+  margin-top: 10px;
+  background-color: black;
+  border-color: gray;
+  height: 45px;
+  width: 300px;
+}
+.registrate {
+  color: #1882c8;
+  margin-right: 28%;
+  font-weight: bold;
+}
+
+.registrate:hover {
+  color: #2e8bca;
+  cursor: pointer;
+}
+
+input {
+  border-color: gray;
+  border-radius: 8px;
+  height: 40px;
+}

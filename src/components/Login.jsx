@@ -3,7 +3,8 @@ import "../Login.css";
 import TwitterIcon from "@mui/icons-material/Twitter";
 import GoogleIcon from "@mui/icons-material/Google";
 import AppleIcon from "@mui/icons-material/Apple";
-import { Modal } from "./Modal";
+import { LoginModal } from "./LoginModal.jsx";
+import { RegisterModal } from "./RegisterModal";
 
 export const Login = () => {
   return (
@@ -59,11 +60,7 @@ export const Login = () => {
             <p className="text-light">o</p>
             <hr className="text-light" />
           </div>
-          <button className="btn btntelefono rounded-pill">
-            <p className="nombreusuario-tel mt-1 fw-bold text-white">
-              Regístrate con el número de teléfon...
-            </p>
-          </button>
+          <RegisterModal />
           <p className="terminos-de-servicio">
             Al registrarte, aceptas los Términos de servicio y la Política de
             privacidad, incluida la política de Uso de Cookies.
@@ -71,7 +68,7 @@ export const Login = () => {
           <h6 className="ya-tienes-cuenta text-white">
             ¿Ya tienes una cuenta?
           </h6>
-          <Modal />
+          <LoginModal />
         </div>
       </div>
       <footer className="footer">
