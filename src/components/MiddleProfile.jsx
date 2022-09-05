@@ -37,7 +37,7 @@ export const MiddleProfile = ({ refresh, setRefresh }) => {
     setRefresh(!refresh);
   }
   return (
-    <div className="col-md-4 middleprofile container d-flex border border-dark">
+    <div className="col-md-4 middleprofile container d-flex">
       <div className="container border-right border-left">
         <div className="row header">
           <button className="btn btn-dark rounded-pill col-md-1 m-1 arrowicon">
@@ -157,7 +157,6 @@ export const MiddleProfile = ({ refresh, setRefresh }) => {
                 </>
               );
             })}
-            <hr />
           </div>
         </div>
       </div>
