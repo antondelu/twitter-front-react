@@ -18,7 +18,10 @@
   border-color: #1b90dd;
 }
 .leftsidebar {
-  height: 1000px;
+  margin-top: 20px;
+  margin-left: 80px;
+
+  width: 400px;
   background-color: black;
   position: sticky;
   top: 0;

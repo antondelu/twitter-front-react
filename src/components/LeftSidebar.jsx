@@ -12,12 +12,13 @@ import MoreHorizIcon from "@mui/icons-material/MoreHoriz";
 import "../LeftSidebar.css";
 import { Link } from "react-router-dom";
 import { useSelector } from "react-redux";
+import { TweetModal } from "./TweetModal";
 
 export const LeftSidebar = () => {
   const store = useSelector((state) => state);
   const myUser = store.login;
   return (
-    <div className="col-lg-3">
+    <div className="col-lg-3 vh-100">
       <div className="row text-start justify-content-end leftsidebar">
         <div className="col-md-7">
           <button className="btn btn-dark text-light text-start rounded-pill mb-1 btn-lg col-md-7 mt-1">
@@ -59,9 +60,7 @@ export const LeftSidebar = () => {
             <PendingOutlinedIcon className="me-3 fs-2" />
             <Link to={"/error"}>More</Link>
           </button>
-          <button className="btn btn-primary text-center fs-5 rounded-pill btn-lg p-2 ps-5 pe-5 mt-3 fw-bold">
-            Tweet
-          </button>
+          <TweetModal />
           <button className="btn btn-dark text-white rounded-pill btn-hover botonuser">
             <div className="container d-flex text-start">
               <div className="row">
@@ -80,13 +79,6 @@ export const LeftSidebar = () => {
               <div className="col-2">
                 <MoreHorizIcon className="mt-3" />
               </div>
-            </div>
-            <div className="col-8">
-              <p className="nombreusuario mb-0 fw-bold">Nombre Usuario</p>
-              <p className="usuario">@Usuario</p>
-            </div>
-            <div className="col-2">
-              <MoreHorizIcon className="mt-3" />
             </div>
           </button>
         </div>
