@@ -40,8 +40,8 @@ export const MiddleProfile = ({ refresh, setRefresh }) => {
     setRefresh(!refresh);
   }
   return (
-    <div className="col-md-4 middleprofile container d-flex border border-dark">
-      <div className="container border-right border-left">
+    <div className="col-md-4 middleprofile container d-flex">
+      <div className="container div-full-pantalla">
         <div className="row header">
           <button className="btn btn-dark rounded-pill col-md-1 m-1 arrowicon">
             <Link to={"/home"}>
@@ -73,10 +73,15 @@ export const MiddleProfile = ({ refresh, setRefresh }) => {
               {infoUser?.firstname} {infoUser?.lastname}
             </h3>
             {infoUser?.username === myUser.username ? (
-              <ModalEditProfile refresh={refresh} setRefresh={setRefresh} />
+              <ModalEditProfile
+                refresh={refresh}
+                setRefresh={setRefresh}
+                onClick={!refresh}
+              />
             ) : (
               <FollowProfile
                 user={infoUser}
+                onClick={!refresh}
                 refresh={refresh}
                 setRefresh={setRefresh}
               />
@@ -159,7 +164,6 @@ export const MiddleProfile = ({ refresh, setRefresh }) => {
                 </>
               );
             })}
-            <hr />
           </div>
         </div>
       </div>

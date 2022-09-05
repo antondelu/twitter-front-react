@@ -54,7 +54,7 @@ ul {
 }
 
 .iconosTweet {
-  width: 120%;
+  width: 350px;
   justify-content: space-between;
 }
 
@@ -69,4 +69,11 @@ ul {
 }
 .texto-tweet {
   margin-top: -7%;
+}
+.middle-home {
+  border-left: 0.5px solid rgb(80, 80, 80);
+  border-right: 0.5px solid rgb(80, 80, 80);
+  height: 100%;
+  overflow-y: scroll;
+
 }

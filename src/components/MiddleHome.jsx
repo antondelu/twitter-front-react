@@ -62,7 +62,7 @@ function MiddleHome({ refresh, setRefresh }) {
 
   return (
     <>
-      <div className="col-lg-4 col-xxl-4 bg-black border border-dark">
+      <div className="col-lg-4 col-xxl-4 bg-black middle-home">
         <div className="d-flex justify-content-between mt-3 mb-1">
           <h4 className="text-white header">Home</h4>
           <img src="/stars_logo.png" alt="" />
@@ -115,7 +115,7 @@ function MiddleHome({ refresh, setRefresh }) {
                         alt="foto-perfil"
                       />
                     </div>
-                    <div className="d-flex flex-column justify-content-between">
+                    <div className="d-flex flex-column justify-content-between contenido-div">
                       <Link to={`/${element.username}`}>
                         <div className="d-flex">
                           <p className="username text-start fw-bold ms-2">
