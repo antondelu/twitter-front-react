@@ -39,9 +39,9 @@ function FollowRightSidebar({ user, refresh, setRefresh }) {
   return (
     <button className="buttonFollow" onClick={() => follow()}>
       {!myUser?.following.includes(user?._id) ? (
-        <span>Follow</span>
+        <span className="ms-1">Follow</span>
       ) : (
-        <span>Unfollow</span>
+        <span className="ms-1">Unfollow</span>
       )}
     </button>
   );

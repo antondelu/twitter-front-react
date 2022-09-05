@@ -5,7 +5,6 @@ import ModeCommentOutlinedIcon from "@mui/icons-material/ModeCommentOutlined";
 import DeleteIcon from "@mui/icons-material/Delete";
 import RepeatOneOutlinedIcon from "@mui/icons-material/RepeatOneOutlined";
 import IosShareOutlinedIcon from "@mui/icons-material/IosShareOutlined";
-import SignalCellularAltOutlinedIcon from "@mui/icons-material/SignalCellularAltOutlined";
 import { Link, useParams } from "react-router-dom";
 import { useSelector } from "react-redux";
 import axios from "axios";
@@ -13,9 +12,8 @@ import { useEffect, useState } from "react";
 import { ModalEditProfile } from "./EditProfileModal";
 import Like from "./Like";
 import FollowProfile from "./FollowProfile";
-
 export const MiddleProfile = ({ refresh, setRefresh }) => {
-  const [infoUser, setInfoUser] = useState([]);
+  const [infoUser, setInfoUser] = useState({});
   const store = useSelector((state) => state);
   const myUser = store.login;
   const { username } = useParams();
@@ -25,7 +23,6 @@ export const MiddleProfile = ({ refresh, setRefresh }) => {
       const response = await axios.get(`http://localhost:8000/${username}`, {
         headers: { Authorization: "Bearer " + myUser.token },
       });
-      console.log(response.data);
       setInfoUser(response.data);
     };
     userNameProfile();
@@ -40,8 +37,8 @@ export const MiddleProfile = ({ refresh, setRefresh }) => {
     setRefresh(!refresh);
   }
   return (
-    <div className="col-md-5 middleprofile container d-flex border border-dark">
-      <div className="container">
+    <div className="col-md-4 middleprofile container d-flex border border-dark">
+      <div className="container border-right border-left">
         <div className="row header">
           <button className="btn btn-dark rounded-pill col-md-1 m-1 arrowicon">
             <Link to={"/home"}>
@@ -113,24 +110,24 @@ export const MiddleProfile = ({ refresh, setRefresh }) => {
                           alt=""
                         />
                       </div>
-                      <div className="col-md-9 d-flex">
+                      <div className="col-md-10 d-flex mb-2">
                         <h6 className="text-white fw-bold ms-4">
                           {infoUser.firstname} {infoUser.lastname}
                         </h6>
                         <h6 className="texto-gris ms-2">
                           @{infoUser.username}
                         </h6>
+                        {/* <h6 className="texto-gris ms-2">
+                          {element.creationDate}
+                        </h6> */}
                       </div>
-                      <h6 className="texto-gris ms-2">
-                        {element.creationDate}
-                      </h6>
                       <p className="text-white tweet">{element.text}</p>
                     </div>
                     <div className="container d-flex botones">
-                      <button className="btn btn-dark rounded rounded-pill texto-gris fw-bold mt-3">
+                      <button className="btn btn-dark rounded rounded-pill texto-gris fw-bold botones-grises">
                         <ModeCommentOutlinedIcon />
                       </button>
-                      <button className="btn btn-dark rounded rounded-pill texto-gris fw-bold mt-3">
+                      <button className="btn btn-dark rounded rounded-pill texto-gris fw-bold botones-grises">
                         <RepeatOneOutlinedIcon />
                       </button>
                       <Like
@@ -138,19 +135,25 @@ export const MiddleProfile = ({ refresh, setRefresh }) => {
                         refresh={refresh}
                         setRefresh={setRefresh}
                       />
-                      <button className="btn btn-dark rounded rounded-pill texto-gris fw-bold mt-3">
+                      <button className="btn btn-dark rounded rounded-pill texto-gris fw-bold botones-grises">
                         <IosShareOutlinedIcon />
                       </button>
-                      {username == infoUser.usename ? (
-                        <button
-                          className="btn btn-dark rounded rounded-pill texto-gris fw-bold mt-3"
-                          onClick={() => deleteTweet(element._id)}
-                        >
-                          <DeleteIcon />
-                        </button>
+                      {/* {String(username === element.username)}
+                      {element.username} */}
+                      {username.toLowerCase() ===
+                      myUser.username?.toLowerCase() ? (
+                        <div>
+                          <button
+                            className="btn btn-dark rounded rounded-pill texto-gris fw-bold botones-grises"
+                            onClick={() => deleteTweet(element._id)}
+                          >
+                            <DeleteIcon />
+                          </button>
+                        </div>
                       ) : null}
                     </div>
                   </div>
+                  <hr />
                 </>
               );
             })}

@@ -37,17 +37,17 @@ function Like({ tweet, setRefresh, refresh }) {
   }
 
   return (
-    <button className="bg-black" onClick={() => like()}>
+    <div className="" onClick={() => like()}>
       {tweet.likes.includes(user?._id) ? (
-        <span style={{ color: "#fa167f" }}>
-          <FavoriteIcon /> {tweet.likes.length}
+        <span style={{ color: "#fa167f" }} className="d-flex">
+          <FavoriteIcon /> <p className="ms-2">{tweet.likes.length}</p>
         </span>
       ) : (
-        <span style={{ color: "white" }}>
-          <FavoriteIcon /> {tweet.likes.length}
+        <span style={{ color: "#838283" }} className="d-flex">
+          <FavoriteIcon /> <p className="ms-2">{tweet.likes.length}</p>
         </span>
       )}
-    </button>
+    </div>
   );
 }
 
