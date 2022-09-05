@@ -4,13 +4,14 @@ import { useSelector } from "react-redux";
 import "./sidebar.css";
 import axios from "axios";
 import { useEffect, useState } from "react";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import FollowRightSidebar from "./FollowRightSidebar";
 
 export const RightSidebar = ({ refresh, setRefresh }) => {
   const [recommendedUser, setRecommendedUser] = useState([]);
   const store = useSelector((state) => state);
   const myUser = store.login;
+  const navigate = useNavigate();
   useEffect(() => {
     const userNameProfile = async () => {
       const response = await axios.get(`http://localhost:8000/who_to_follow`, {
@@ -141,7 +142,10 @@ export const RightSidebar = ({ refresh, setRefresh }) => {
                                 id="nombreusuario"
                                 className="nombreusuario mb-0 mt-2"
                               >
-                                <Link to={`/${element.username}`}>
+                                <Link
+                                  to={`/${element.username}`}
+                                  onClick={!refresh}
+                                >
                                   {element.firstname} {element.lastname}
                                 </Link>
                               </p>

@@ -73,10 +73,15 @@ export const MiddleProfile = ({ refresh, setRefresh }) => {
               {infoUser?.firstname} {infoUser?.lastname}
             </h3>
             {infoUser?.username === myUser.username ? (
-              <ModalEditProfile refresh={refresh} setRefresh={setRefresh} />
+              <ModalEditProfile
+                refresh={refresh}
+                setRefresh={setRefresh}
+                onClick={!refresh}
+              />
             ) : (
               <FollowProfile
                 user={infoUser}
+                onClick={!refresh}
                 refresh={refresh}
                 setRefresh={setRefresh}
               />
