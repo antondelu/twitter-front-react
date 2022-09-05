@@ -14,6 +14,7 @@ import Like from "./Like";
 import FollowProfile from "./FollowProfile";
 export const MiddleProfile = ({ refresh, setRefresh }) => {
   const [infoUser, setInfoUser] = useState({});
+  const [tweetsOrdenados, setTweetsOrdenados] = useState([]);
   const store = useSelector((state) => state);
   const myUser = store.login;
   const { username } = useParams();
@@ -24,10 +25,12 @@ export const MiddleProfile = ({ refresh, setRefresh }) => {
         headers: { Authorization: "Bearer " + myUser.token },
       });
       setInfoUser(response.data);
+      setTweetsOrdenados(response.data.tweets.reverse());
     };
     userNameProfile();
   }, [refresh]);
-  console.log(infoUser.username);
+
+  console.log(tweetsOrdenados);
   async function deleteTweet(id) {
     console.log(id);
     const response = await axios.delete(`http://localhost:8000/tweet/${id}`, {
@@ -97,8 +100,7 @@ export const MiddleProfile = ({ refresh, setRefresh }) => {
               <div className="texto-gris fw-bold mt-3">Likes</div>
             </div>
             <hr />
-
-            {infoUser?.tweets?.map((element, index) => {
+            {tweetsOrdenados.map((tweet, index) => {
               return (
                 <>
                   <div className="tweets-section container" key={index}>
@@ -117,11 +119,11 @@ export const MiddleProfile = ({ refresh, setRefresh }) => {
                         <h6 className="texto-gris ms-2">
                           @{infoUser.username}
                         </h6>
-                        {/* <h6 className="texto-gris ms-2">
-                          {element.creationDate}
-                        </h6> */}
+                        <h6 className="texto-gris ms-2">
+                          {tweet.creationDate.split("T")[0]}
+                        </h6>
                       </div>
-                      <p className="text-white tweet">{element.text}</p>
+                      <p className="text-white tweet">{tweet.text}</p>
                     </div>
                     <div className="container d-flex botones">
                       <button className="btn btn-dark rounded rounded-pill texto-gris fw-bold botones-grises">
@@ -131,21 +133,21 @@ export const MiddleProfile = ({ refresh, setRefresh }) => {
                         <RepeatOneOutlinedIcon />
                       </button>
                       <Like
-                        tweet={element}
+                        tweet={tweet}
                         refresh={refresh}
                         setRefresh={setRefresh}
                       />
                       <button className="btn btn-dark rounded rounded-pill texto-gris fw-bold botones-grises">
                         <IosShareOutlinedIcon />
                       </button>
-                      {/* {String(username === element.username)}
-                      {element.username} */}
+                      {/* {String(username === tweet.username)}
+                      {tweet.username} */}
                       {username.toLowerCase() ===
                       myUser.username?.toLowerCase() ? (
                         <div>
                           <button
                             className="btn btn-dark rounded rounded-pill texto-gris fw-bold botones-grises"
-                            onClick={() => deleteTweet(element._id)}
+                            onClick={() => deleteTweet(tweet._id)}
                           >
                             <DeleteIcon />
                           </button>

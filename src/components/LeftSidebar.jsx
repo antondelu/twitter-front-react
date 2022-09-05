@@ -15,12 +15,14 @@ import { useSelector } from "react-redux";
 import { TweetModal } from "./TweetModal";
 import { useEffect, useState } from "react";
 import axios from "axios";
+import { PURGE } from "redux-persist";
 
-export const LeftSidebar = () => {
+export const LeftSidebar = ({ refresh, setRefresh }) => {
   const [infoUser, setInfoUser] = useState([]);
   const store = useSelector((state) => state);
   const myUser = store.login;
   const navigate = useNavigate();
+
   function logout() {
     myUser.token = null;
     navigate("/");
@@ -81,7 +83,7 @@ export const LeftSidebar = () => {
             <PendingOutlinedIcon className="me-3 fs-2" />
             <Link to={"/error"}>More</Link>
           </button>
-          <TweetModal />
+          <TweetModal refresh={refresh} setRefresh={setRefresh} />
           <button
             className="btn btn-dark text-white rounded-pill btn-hover boton-user-final"
             onClick={logout}

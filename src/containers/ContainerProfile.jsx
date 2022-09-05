@@ -5,7 +5,7 @@ import { RightSidebar } from "../components/RightSidebar";
 export const Profile = ({ refresh, setRefresh }) => {
   return (
     <div className="row">
-      <LeftSidebar />
+      <LeftSidebar refresh={refresh} setRefresh={setRefresh} />
       <MiddleProfile refresh={refresh} setRefresh={setRefresh} />
       <RightSidebar refresh={refresh} setRefresh={setRefresh} />
     </div>
