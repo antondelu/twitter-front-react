@@ -1,0 +1,9 @@
+.modal_logout {
+  background-color: black;
+  border: white solid 1px;
+  width: 260px;
+  height: 200px;
+  border-radius: 20px;
+  color: white;
+  padding: 10px;
+}

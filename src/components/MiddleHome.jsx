@@ -34,9 +34,12 @@ function MiddleHome({ refresh, setRefresh }) {
 
   useEffect(() => {
     const getTweets = async () => {
-      const response = await axios.get("http://localhost:8000/home", {
-        headers: { Authorization: "Bearer " + myUser.token },
-      });
+      const response = await axios.get(
+        "http://localhost:8000/getTweetsFollowers",
+        {
+          headers: { Authorization: "Bearer " + myUser.token },
+        }
+      );
       setTweets(response.data);
     };
     getTweets();
