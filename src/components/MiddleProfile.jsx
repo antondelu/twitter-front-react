@@ -2,6 +2,7 @@ import "bootstrap/dist/css/bootstrap.min.css";
 import "../MiddleProfile.css";
 import ArrowBackIcon from "@mui/icons-material/ArrowBack";
 import ModeCommentOutlinedIcon from "@mui/icons-material/ModeCommentOutlined";
+import DeleteIcon from "@mui/icons-material/Delete";
 import RepeatOneOutlinedIcon from "@mui/icons-material/RepeatOneOutlined";
 import IosShareOutlinedIcon from "@mui/icons-material/IosShareOutlined";
 import SignalCellularAltOutlinedIcon from "@mui/icons-material/SignalCellularAltOutlined";
@@ -29,13 +30,14 @@ export const MiddleProfile = ({ refresh, setRefresh }) => {
     };
     userNameProfile();
   }, [refresh]);
-
+  console.log(infoUser.username);
   async function deleteTweet(id) {
     console.log(id);
     const response = await axios.delete(`http://localhost:8000/tweet/${id}`, {
       headers: { Authorization: "Bearer " + myUser.token },
     });
     // console.log(response.data);
+    setRefresh(!refresh);
   }
   return (
     <div className="col-md-5 middleprofile container d-flex border border-dark">
@@ -139,12 +141,14 @@ export const MiddleProfile = ({ refresh, setRefresh }) => {
                       <button className="btn btn-dark rounded rounded-pill texto-gris fw-bold mt-3">
                         <IosShareOutlinedIcon />
                       </button>
-                      <button
-                        className="btn btn-dark rounded rounded-pill texto-gris fw-bold mt-3"
-                        onClick={() => deleteTweet(element._id)}
-                      >
-                        <SignalCellularAltOutlinedIcon />
-                      </button>
+                      {username == infoUser.usename ? (
+                        <button
+                          className="btn btn-dark rounded rounded-pill texto-gris fw-bold mt-3"
+                          onClick={() => deleteTweet(element._id)}
+                        >
+                          <DeleteIcon />
+                        </button>
+                      ) : null}
                     </div>
                   </div>
                 </>
