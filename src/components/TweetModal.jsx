@@ -6,7 +6,7 @@ import "bootstrap/dist/css/bootstrap.min.css";
 import { useDispatch, useSelector } from "react-redux";
 import axios from "axios";
 
-export const TweetModal = () => {
+export const TweetModal = ({ refresh, setRefresh }) => {
   const [visible, setVisible] = useState(false);
   const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
@@ -43,6 +43,7 @@ export const TweetModal = () => {
     });
     setVisible(false);
     setTweet("");
+    setRefresh(!refresh);
     dispatch({
       type: "CREAR_TWEET",
       payload: response.data._id,

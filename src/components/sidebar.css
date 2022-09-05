@@ -3,11 +3,13 @@
 }
 body {
   background-color: black;
+ 
 }
 
 .card-header {
   font-size: 35px;
   font-weight: 800;
+
 }
 
 .trends {
@@ -58,6 +60,7 @@ body {
   width: 400px;
   background-color: #16181c;
   margin-left: 20px;
+
 }
 .contentTrends {
   display: flex;
@@ -210,3 +213,7 @@ span {
   color: white;
   font-size: 0.9rem;
 }
+/* .right-sidebar {
+  position: fixed;
+  top: 0;
+} */

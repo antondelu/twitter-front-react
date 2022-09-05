@@ -73,6 +73,7 @@ ul {
 .middle-home {
   border-left: 0.5px solid rgb(80, 80, 80);
   border-right: 0.5px solid rgb(80, 80, 80);
-  height:auto;
+  height: 100%;
+  overflow-y: scroll;
 
 }

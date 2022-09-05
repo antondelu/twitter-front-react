@@ -22,7 +22,7 @@ export const RightSidebar = ({ refresh, setRefresh }) => {
   }, [refresh]);
 
   return (
-    <div className="col-md-4">
+    <div className="col-md-4 right-sidebar">
       <div className="group">
         <svg className="icon" aria-hidden="true" viewBox="0 0 24 24">
           <g>
