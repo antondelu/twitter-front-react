@@ -95,7 +95,7 @@ export const ModalEditProfile = ({ refresh, setRefresh }) => {
   return (
     <>
       <button
-        className="btn btn-black text-light rounded-pill mb-1 btn-lg"
+        className="btn btn-black text-light rounded-pill mb-1 btn-lg edit-profile-button"
         onClick={() => setVisible(!visible)}
       >
         Edit profile

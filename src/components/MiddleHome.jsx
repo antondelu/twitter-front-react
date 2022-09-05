@@ -63,25 +63,23 @@ function MiddleHome({ refresh, setRefresh }) {
 
   return (
     <>
-      <div className="col-10 col-lg-5 col-xxl-5 bg-black">
+      <div className="col-lg-4 col-xxl-4 bg-black border border-dark">
         <div className="d-flex justify-content-between mt-3 mb-1">
-          <h4 className=" mx-1 text-white">Home {myUser.username}</h4>
-          <img src="/stars_logo.png" height="30px" alt="" />
+          <h4 className="text-white header">Home {myUser.username}</h4>
+          <img src="/stars_logo.png" alt="" />
         </div>
         <div className="text-white mt-3 middlehome">
           <form onSubmit={(e) => e.preventDefault()}>
             <div className="row d-flex ">
-              <div className="fotoPerfil me-2">
+              <div className="fotoPerfil">
                 <img
                   src={infoUser.image}
                   className="imgFotoPerfil"
                   alt="foto-perfil"
-                  width="50px"
-                  height="50px"
                 />
               </div>
               <div className="crearTweet d-flex flex-column bg-black">
-                <div className="form-floating text-white">
+                <div className="form-floating text-start text-white">
                   <textarea
                     name="text"
                     className="input crearTweetInput"
@@ -92,8 +90,8 @@ function MiddleHome({ refresh, setRefresh }) {
                     onChange={(e) => setTweet(e.target.value)}
                   ></textarea>
                 </div>
-                <div className="d-flex justify-content-between me-3">
-                  <img src="/image_logo.png" height="50px" alt="" />
+                <div className="d-flex justify-content-between">
+                  <img className="iconos-azules" src="/image_logo.png" alt="" />
                   <button
                     type="submit"
                     onClick={() => addTweets(tweet)}
@@ -105,28 +103,32 @@ function MiddleHome({ refresh, setRefresh }) {
               </div>
             </div>
           </form>
-          <hr className=" text-light" />
+          <hr className="text-light" />
           <div className="row">
             <ul>
               {tweets?.map((element, index) => (
                 <>
                   <li className="tweetHome d-flex" key={element.id}>
-                    <div className="fotoPerfil me-2">
+                    <div className="fotoPerfil">
                       <img
                         src={element.user.image}
                         className="imgFotoPerfil"
                         alt="foto-perfil"
-                        width="50px"
-                        height="50px"
                       />
                     </div>
-
                     <div className="d-flex flex-column justify-content-between">
                       <Link to={`/${element.username}`}>
-                        {element.username}
+                        <div className="d-flex">
+                          <p className="username text-start fw-bold">
+                            {element.username}
+                          </p>
+                          <p className="username text-start texto-gris ms-1">
+                            @{element.username}
+                          </p>
+                        </div>
                       </Link>
-                      {element.text}
-                      <div className="iconosTweet d-flex justify-content-around">
+                      <p className="texto-tweet text-start">{element.text}</p>
+                      <div className="iconosTweet d-flex texto-gris">
                         <div>
                           <ModeCommentIcon /> 2
                         </div>
