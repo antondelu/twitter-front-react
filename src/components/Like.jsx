@@ -43,7 +43,7 @@ function Like({ tweet, setRefresh, refresh }) {
           <FavoriteIcon /> <p className="ms-2">{tweet.likes.length}</p>
         </span>
       ) : (
-        <span style={{ color: "white" }} className="d-flex">
+        <span style={{ color: "#838283" }} className="d-flex">
           <FavoriteIcon /> <p className="ms-2">{tweet.likes.length}</p>
         </span>
       )}

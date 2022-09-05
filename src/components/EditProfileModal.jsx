@@ -6,7 +6,7 @@ import {
   CModalHeader,
   CModalTitle,
 } from "@coreui/react";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import "bootstrap/dist/css/bootstrap.min.css";
 import { useDispatch, useSelector } from "react-redux";
@@ -24,14 +24,26 @@ export const ModalEditProfile = ({ refresh, setRefresh }) => {
   const [image, setImage] = useState("");
   const [loading, setLoading] = useState(false);
   const [coverImage, setCoverImage] = useState("");
+  const [infoUser, setInfoUser] = useState([]);
   const store = useSelector((state) => state);
   const myUser = store.login;
+  useEffect(() => {
+    const userNameProfile = async () => {
+      const response = await axios.get(
+        `http://localhost:8000/${myUser.username}`,
+        {
+          headers: { Authorization: "Bearer " + myUser.token },
+        }
+      );
+      console.log(response.data);
+      setInfoUser(response.data);
+    };
+    userNameProfile();
+  }, [refresh]);
 
-  const dispatch = useDispatch();
-  const navigate = useNavigate();
   async function editProfile() {
     const response = await axios({
-      method: "post",
+      method: "put",
       url: "http://localhost:8000/user",
       data: {
         firstname: firstname,
@@ -121,7 +133,7 @@ export const ModalEditProfile = ({ refresh, setRefresh }) => {
                     placeholder="FirstName"
                     type="text"
                     onChange={(e) => setFirstname(e.target.value)}
-                    value={firstname}
+                    defaultValue={infoUser.firstname}
                   />
                 </div>
                 <div>
@@ -129,7 +141,7 @@ export const ModalEditProfile = ({ refresh, setRefresh }) => {
                     placeholder="LastName"
                     type="text"
                     onChange={(e) => setLastname(e.target.value)}
-                    value={lastname}
+                    defaultValue={infoUser.lastname}
                   />
                 </div>
                 <div>
@@ -145,7 +157,7 @@ export const ModalEditProfile = ({ refresh, setRefresh }) => {
                     placeholder="Email"
                     type="email"
                     onChange={(e) => setEmail(e.target.value)}
-                    value={email}
+                    defaultValue={infoUser.email}
                   />
                 </div>
                 <div>
@@ -154,7 +166,7 @@ export const ModalEditProfile = ({ refresh, setRefresh }) => {
                     type="text"
                     rows="2"
                     onChange={(e) => setBio(e.target.value)}
-                    value={bio}
+                    defaultValue={infoUser.description}
                   />
                 </div>
                 <div>

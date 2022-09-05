@@ -2,6 +2,7 @@ import "bootstrap/dist/css/bootstrap.min.css";
 import "../MiddleProfile.css";
 import ArrowBackIcon from "@mui/icons-material/ArrowBack";
 import ModeCommentOutlinedIcon from "@mui/icons-material/ModeCommentOutlined";
+import DeleteIcon from "@mui/icons-material/Delete";
 import RepeatOneOutlinedIcon from "@mui/icons-material/RepeatOneOutlined";
 import IosShareOutlinedIcon from "@mui/icons-material/IosShareOutlined";
 import { Link, useParams } from "react-router-dom";
@@ -11,10 +12,8 @@ import { useEffect, useState } from "react";
 import { ModalEditProfile } from "./EditProfileModal";
 import Like from "./Like";
 import FollowProfile from "./FollowProfile";
-import DeleteOutlineIcon from "@mui/icons-material/DeleteOutline";
-
 export const MiddleProfile = ({ refresh, setRefresh }) => {
-  const [infoUser, setInfoUser] = useState([]);
+  const [infoUser, setInfoUser] = useState({});
   const store = useSelector((state) => state);
   const myUser = store.login;
   const { username } = useParams();
@@ -24,22 +23,22 @@ export const MiddleProfile = ({ refresh, setRefresh }) => {
       const response = await axios.get(`http://localhost:8000/${username}`, {
         headers: { Authorization: "Bearer " + myUser.token },
       });
-      console.log(response.data);
       setInfoUser(response.data);
     };
     userNameProfile();
   }, [refresh]);
-
+  console.log(infoUser.username);
   async function deleteTweet(id) {
     console.log(id);
     const response = await axios.delete(`http://localhost:8000/tweet/${id}`, {
       headers: { Authorization: "Bearer " + myUser.token },
     });
     // console.log(response.data);
+    setRefresh(!refresh);
   }
   return (
     <div className="col-md-4 middleprofile container d-flex border border-dark">
-      <div className="container">
+      <div className="container border-right border-left">
         <div className="row header">
           <button className="btn btn-dark rounded-pill col-md-1 m-1 arrowicon">
             <Link to={"/home"}>
@@ -118,9 +117,9 @@ export const MiddleProfile = ({ refresh, setRefresh }) => {
                         <h6 className="texto-gris ms-2">
                           @{infoUser.username}
                         </h6>
-                        <h6 className="texto-gris ms-2">
+                        {/* <h6 className="texto-gris ms-2">
                           {element.creationDate}
-                        </h6>
+                        </h6> */}
                       </div>
                       <p className="text-white tweet">{element.text}</p>
                     </div>
@@ -139,15 +138,22 @@ export const MiddleProfile = ({ refresh, setRefresh }) => {
                       <button className="btn btn-dark rounded rounded-pill texto-gris fw-bold botones-grises">
                         <IosShareOutlinedIcon />
                       </button>
-                      <button
-                        className="btn btn-dark rounded rounded-pill texto-gris fw-bold botones-grises"
-                        onClick={() => deleteTweet(element._id)}
-                      >
-                        <DeleteOutlineIcon />
-                      </button>
+                      {/* {String(username === element.username)}
+                      {element.username} */}
+                      {username.toLowerCase() ===
+                      myUser.username?.toLowerCase() ? (
+                        <div>
+                          <button
+                            className="btn btn-dark rounded rounded-pill texto-gris fw-bold botones-grises"
+                            onClick={() => deleteTweet(element._id)}
+                          >
+                            <DeleteIcon />
+                          </button>
+                        </div>
+                      ) : null}
                     </div>
-                    <hr />
                   </div>
+                  <hr />
                 </>
               );
             })}

@@ -54,7 +54,7 @@ ul {
 }
 
 .iconosTweet {
-  width: 400px;
+  width: 120%;
   justify-content: space-between;
 }
 
@@ -65,7 +65,7 @@ ul {
 }
 
 .iconos-azules {
-height: 45px;
+  height: 45px;
 }
 .texto-tweet {
   margin-top: -7%;

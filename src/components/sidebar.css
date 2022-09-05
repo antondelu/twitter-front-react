@@ -20,7 +20,6 @@ body {
   margin-top: 10px;
   padding-left: 16px;
   cursor: pointer;
-
 }
 .trends:hover {
   background-color: #979da113;
@@ -64,7 +63,6 @@ body {
   display: flex;
   justify-content: space-between;
   color: #71767b;
-  
 }
 .contentTrends h2 {
   margin-right: 20px;
@@ -111,7 +109,6 @@ span {
   font-family: inherit;
   font-weight: bold;
   cursor: pointer;
-  
 }
 
 /* From uiverse.io by @alexruix */
@@ -183,7 +180,8 @@ span {
 }
 
 .avatar {
-  height: 45px;
+  height: 50px;
+  width: 50px;
   margin-top: -3px;
   margin-left: 10px;
 }

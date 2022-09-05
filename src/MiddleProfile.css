@@ -59,6 +59,7 @@ hr {
 .tweet {
   margin-top: -4%;
   margin-left: 13%;
+  max-width: 90%;
 }
 
 .botones {

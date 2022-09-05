@@ -118,7 +118,7 @@ function MiddleHome({ refresh, setRefresh }) {
                     <div className="d-flex flex-column justify-content-between">
                       <Link to={`/${element.username}`}>
                         <div className="d-flex">
-                          <p className="username text-start fw-bold">
+                          <p className="username text-start fw-bold ms-2">
                             {element.username}
                           </p>
                           <p className="username text-start texto-gris ms-1">
@@ -126,7 +126,9 @@ function MiddleHome({ refresh, setRefresh }) {
                           </p>
                         </div>
                       </Link>
-                      <p className="texto-tweet text-start">{element.text}</p>
+                      <p className="texto-tweet text-start ms-2">
+                        {element.text}
+                      </p>
                       <div className="iconosTweet d-flex texto-gris">
                         <div>
                           <ModeCommentIcon /> 2
