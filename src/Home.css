@@ -5,6 +5,8 @@
 
 .imgFotoPerfil {
   border-radius: 50%;
+  height: 50px;
+  width: 50px;
 }
 
 .crearTweet {
@@ -16,16 +18,30 @@
   height: 80px;
   background-color: black;
   border: none;
-  font-size: large;
+  font-size: 1.3rem;
   resize: none;
   outline: none;
   color: white;
+  margin-top: 1%;
+  border-radius: 0%;
+  padding: 0%;
 }
 
 .buttonTweetHome {
   height: 40px;
   width: 100px;
   font-weight: 700;
+  color: white;
+  background-color: #1b90dd;
+  border-color: #1b90dd;
+}
+.buttonTweetHome:hover {
+  height: 40px;
+  width: 100px;
+  font-weight: 700;
+  color: white;
+  background-color: #1677b7;
+  border-color: #1b90dd;
 }
 
 .tweetHome {
@@ -38,5 +54,19 @@ ul {
 }
 
 .iconosTweet {
-  width: 500px;
+  width: 400px;
+  justify-content: space-between;
+}
+
+.header {
+  margin-top: 1%;
+  font-size: 1.3rem;
+  font-family: Helvetica;
+}
+
+.iconos-azules {
+height: 45px;
+}
+.texto-tweet {
+  margin-top: -7%;
 }

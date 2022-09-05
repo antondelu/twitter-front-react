@@ -18,9 +18,9 @@ export const LeftSidebar = () => {
   const store = useSelector((state) => state);
   const myUser = store.login;
   return (
-    <div className="col-lg-3 vh-100">
+    <div className="col-md-4 left-sidebar-final">
       <div className="row text-start justify-content-end leftsidebar">
-        <div className="col-md-7">
+        <div className="col-lg-7">
           <button className="btn btn-dark text-light text-start rounded-pill mb-1 btn-lg col-md-7 mt-1">
             <Link to="/home">
               <TwitterIcon className="fs-2" />
@@ -60,21 +60,25 @@ export const LeftSidebar = () => {
             <PendingOutlinedIcon className="me-3 fs-2" />
             <Link to={"/error"}>More</Link>
           </button>
+
           <TweetModal />
-          <button className="btn btn-dark text-white rounded-pill btn-hover botonuser">
+
+          <button className="btn btn-dark text-white rounded-pill btn-hover boton-user-final">
             <div className="container d-flex text-start">
               <div className="row">
-                <div className="col-2 me-3">
+                <div className="col-2 me-3 div-avatar">
                   <img
-                    className="rounded-circle mt-1"
+                    className="rounded-circle mt-1 avatar"
                     src="https://innostudio.de/fileuploader/images/default-avatar.png"
                     alt=""
                   />
                 </div>
               </div>
-              <div className="col-8">
-                <p className="nombreusuario mb-0 fw-bold">Nombre Usuario</p>
-                <p className="usuario">@Usuario</p>
+              <div className="col-6">
+                <p className="nombreusuario text-white fw-bold">
+                  Nombre Usuario
+                </p>
+                <p className="usuario mt-3">@Usuario</p>
               </div>
               <div className="col-2">
                 <MoreHorizIcon className="mt-3" />

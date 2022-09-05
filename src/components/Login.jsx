@@ -61,7 +61,7 @@ export const Login = () => {
             <hr className="text-light" />
           </div>
           <RegisterModal />
-          <p className="terminos-de-servicio">
+          <p className="terminos-de-servicio ms-2 mt-1">
             Al registrarte, aceptas los Términos de servicio y la Política de
             privacidad, incluida la política de Uso de Cookies.
           </p>

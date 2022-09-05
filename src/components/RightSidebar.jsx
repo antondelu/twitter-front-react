@@ -107,7 +107,6 @@ export const RightSidebar = ({ refresh, setRefresh }) => {
           <h5 className="card-title card2">Tremendo</h5>
           <p className="amountTwetts">32.7k Tweets</p>
         </div>
-        {/* <p className="showmore">Show more</p> */}
       </div>
 
       <div className="row mt-3">
@@ -163,7 +162,7 @@ export const RightSidebar = ({ refresh, setRefresh }) => {
                   </div>
                 </div>
               </div>
-              <p className="termsofservice mt-3 text-start">
+              <p className="termsofservice mt-3 text-start mt-5">
                 Terms of Service Privacy Policy Cookie Policy Accessibility Ads
                 info More © 2022 Equipo 5 Hack!
               </p>

@@ -15,7 +15,8 @@
 }
 
 .avatar-profile {
-  height: 80%;
+  height: 10rem;
+  width: 10rem;
   background-color: black;
   padding: 0.6%;
   margin-top: 20%;
@@ -52,6 +53,7 @@ hr {
 }
 .avatar-icon {
   height: 3rem;
+  width: 3rem;
 }
 
 .tweet {
@@ -66,4 +68,11 @@ hr {
 a {
   color: white;
   text-decoration: none;
+}
+.edit-profile-button {
+  margin-top: -180px;
+}
+
+.botones-grises {
+  margin-top: -3%;
 }

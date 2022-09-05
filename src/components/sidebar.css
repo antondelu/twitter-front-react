@@ -111,30 +111,30 @@ span {
   font-family: inherit;
   font-weight: bold;
   cursor: pointer;
+  
 }
 
 /* From uiverse.io by @alexruix */
 .group {
- 
   display: flex;
   line-height: 28px;
   align-items: center;
   position: relative;
-  margin-left: 100px;
-  margin-top: 5px;
+  margin-left: 4%;
+  margin-top: 4px;
   margin-bottom: 20px;
 }
 
 .input {
-  width: 300px;
+  width: 398px;
   height: 40px;
   line-height: 28px;
   padding: 0 1rem;
   padding-left: 2.5rem;
   border: 2px solid transparent;
   border-radius: 8px;
-  border: 1px solid white;
-  background-color: black;
+  border: 1px solid #1e2025;
+  background-color: #1e2025;
   color: #fff;
   border-radius: 30px;
   outline: none;
@@ -197,7 +197,7 @@ span {
   font-weight: lighter;
   color: #1d9bef;
   margin-top: 20px;
-  margin-left: -170px;
+  margin-left: -45%;
 }
 
 .termsofservice {
